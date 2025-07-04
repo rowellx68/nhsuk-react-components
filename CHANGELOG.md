@@ -1,5 +1,9 @@
 # NHS.UK React components
 
+## 6.0.0 - TBC
+
+TODO
+
 ## 5.0.0 - TBC
 
 This version provides support for nhsuk-frontend version 9.

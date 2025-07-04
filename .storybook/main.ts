@@ -1,24 +1,33 @@
 import type { StorybookConfig } from '@storybook/react-vite';
-import { mergeConfig } from 'vite';
-import tsConfigPaths from 'vite-tsconfig-paths';
 
 const config: StorybookConfig = {
-  stories: ['../stories/**/*.stories.@(ts|tsx)', '../stories/**/*.mdx'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs',
+  ],
   framework: {
     name: '@storybook/react-vite',
     options: {},
   },
   docs: {
-    autodocs: true,
+    defaultName: 'Documentation',
   },
-  typescript: {
-    reactDocgen: 'react-docgen-typescript',
+  core: {
+    disableTelemetry: true,
   },
-  viteFinal(config) {
+  async viteFinal(config) {
+    const { mergeConfig } = await import('vite');
+
     return mergeConfig(config, {
-      plugins: [tsConfigPaths()],
+      resolve: {
+        alias: {
+          '@/': '/src/',
+        },
+      },
     });
   },
 };
+
 export default config;

@@ -185,7 +185,8 @@ const NewErrorSummary = () => (
     <ErrorSummary.Title>ErrorSummary Title</ErrorSummary.Title>
     <ErrorSummary.Body>
       <p>
-        There are a number of errors in the following form. Please correct them before continuing.
+        There are a number of errors in the following form. Please correct them
+        before continuing.
       </p>
       <ErrorSummary.List>
         <ErrorSummary.Item>Error 1</ErrorSummary.Item>
@@ -213,11 +214,17 @@ import { Footer } from 'nhsuk-react-components';
 
 const OldFooter = () => (
   <Footer>
-    <Footer.Link href="https://www.nhs.uk/Pages/nhs-sites.aspx">NHS sites</Footer.Link>
+    <Footer.Link href="https://www.nhs.uk/Pages/nhs-sites.aspx">
+      NHS sites
+    </Footer.Link>
     <Footer.Link href="https://www.nhs.uk/about-us">About us</Footer.Link>
     <Footer.Link href="https://www.nhs.uk/contact-us/">Contact us</Footer.Link>
-    <Footer.Link href="https://www.nhs.uk/about-us/sitemap/">Sitemap</Footer.Link>
-    <Footer.Link href="https://www.nhs.uk/our-policies/">Our policies</Footer.Link>
+    <Footer.Link href="https://www.nhs.uk/about-us/sitemap/">
+      Sitemap
+    </Footer.Link>
+    <Footer.Link href="https://www.nhs.uk/our-policies/">
+      Our policies
+    </Footer.Link>
     <Footer.Copyright>&copy; Crown copyright</Footer.Copyright>
   </Footer>
 );
@@ -225,11 +232,21 @@ const OldFooter = () => (
 const NewFooter = () => (
   <Footer>
     <Footer.List>
-      <Footer.ListItem href="https://www.nhs.uk/nhs-sites/">NHS sites</Footer.ListItem>
-      <Footer.ListItem href="https://www.nhs.uk/about-us/">About us</Footer.ListItem>
-      <Footer.ListItem href="https://www.nhs.uk/contact-us/">Contact us</Footer.ListItem>
-      <Footer.ListItem href="https://www.nhs.uk/about-us/sitemap/">Sitemap</Footer.ListItem>
-      <Footer.ListItem href="https://www.nhs.uk/our-policies/">Our policies</Footer.ListItem>
+      <Footer.ListItem href="https://www.nhs.uk/nhs-sites/">
+        NHS sites
+      </Footer.ListItem>
+      <Footer.ListItem href="https://www.nhs.uk/about-us/">
+        About us
+      </Footer.ListItem>
+      <Footer.ListItem href="https://www.nhs.uk/contact-us/">
+        Contact us
+      </Footer.ListItem>
+      <Footer.ListItem href="https://www.nhs.uk/about-us/sitemap/">
+        Sitemap
+      </Footer.ListItem>
+      <Footer.ListItem href="https://www.nhs.uk/our-policies/">
+        Our policies
+      </Footer.ListItem>
     </Footer.List>
     <Footer.Copyright>&copy; Crown copyright</Footer.Copyright>
   </Footer>
@@ -273,7 +290,9 @@ import { Pagination } from 'nhsuk-react-components';
 
 const OldPagination = () => (
   <Pagination>
-    <Pagination.Previous href="/section/treatments">Treatments</Pagination.Previous>
+    <Pagination.Previous href="/section/treatments">
+      Treatments
+    </Pagination.Previous>
     <Pagination.Next href="/section/symptoms">Symptoms</Pagination.Next>
   </Pagination>
 );
