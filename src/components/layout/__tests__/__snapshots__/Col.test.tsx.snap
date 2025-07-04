@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Col matches snapshot: Col 1`] = `
-<div>
-  <div
-    class="nhsuk-grid-column-full"
-  />
-</div>
-`;

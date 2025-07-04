@@ -1,16 +1,16 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.format.enable": true,
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.validate": ["javascript", "typescript"],
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
-  "eslint.alwaysShowStatus": true,
-  "eslint.workingDirectories": ["src"],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.preferences.jsxAttributeCompletionStyle": "none",
+  "typescript.preferences.jsxAttributeCompletionStyle": "none",
+  "eslint.useFlatConfig": true,
+  "eslint.workingDirectories": [
+    "packages/nhsuk-frontend-react",
+    "packages/nhsuk-frontend-react-extension"
+  ],
+  "conventionalCommits.scopes": [
+    "nhsuk-frontend-react",
+    "nhsuk-frontend-react-extension"
+  ]
 }

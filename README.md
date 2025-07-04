@@ -1,73 +1,102 @@
 # NHS.UK React components
 
-This repository contains the code for NHS.UK React components - a port of the [NHS.UK Frontend components](https://github.com/nhsuk/nhsuk-frontend).
+![MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![CI](https://img.shields.io/github/actions/workflow/status/NHSDigital/nhsuk-react-components/build-test.yml?style=flat-square&label=Build%20and%20test)
+<a href="https://www.npmjs.com/package/nhsuk-react-components">
+![NPM](https://img.shields.io/npm/v/nhsuk-react-components?style=flat-square&label=Version)
+</a>
 
-[![GitHub Actions CI Status](https://github.com/NHSDigital/nhsuk-react-components/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/NHSDigital/nhsuk-react-components/actions?query=workflow%3A%22CI+Build%22+branch%3Amain) [![Bundle Size](https://img.shields.io/bundlephobia/minzip/nhsuk-react-components.svg)](https://bundlephobia.com/result?p=nhsuk-react-components)
-
-## Documentation and examples
-
-[View documentation and examples](https://nhsdigital.github.io/nhsuk-react-components)
+A React component library for the NHS.UK frontend design system.
 
 ## Installation
 
-You can install this package using either `yarn` or `npm`.
-
 ```bash
-npm install --save nhsuk-react-components
-# Or
-yarn add nhsuk-react-components
+pnpm add nhsuk-frontend nhsuk-react-components
 ```
 
-## Usage
+## Setting up
 
-```jsx
-import React, { PureComponent } from 'react';
+> [!IMPORTANT]
+> To ensure that the styles are applied correctly, you must add both `js-enabled` and `nhsuk-frontend-supported` classes to the `body` of your application.
 
-// You can import components from the global module
-import { Button } from 'nhsuk-react-components';
+Refer to the documentation of the framework you are using for more information on how to do this.
 
-// Or you can import components directly
-import Button from 'nhsuk-react-components/lib/components/button';
+## Documentation and examples
 
-class GetStartedButton extends PureComponent {
-  render() {
-    return <Button>Click Me!</Button>;
-  }
-}
-```
+TODO
 
 ## Upgrading
 
-- [Upgrading to 1.0](/docs/upgrade-to-1.0.md)
-- [Upgrading to 2.0](/docs/upgrade-to-2.0.md)
-- [Upgrading to 3.0](/docs/upgrade-to-3.0.md)
-- [Upgrading to 4.0](/docs/upgrade-to-4.0.md)
-- [Upgrading to 5.0](/docs/upgrade-to-5.0.md)
+TODO
 
-## Maintainers
+## Polymorphic components
 
-**We’re currently looking for new maintainers** If you have knowledge of React and would be willing to help maintain this library, you can [email me (Thomas Judd-Cooper)](mailto:thomas.judd-cooper1@nhs.net).
+A few components in this library are polymorphic, allowing you to pass a different component as a prop and render as that component. This is particularly useful when you want to use a custom component, say a `Link` component from a routing library, instead of the default `a` tag.
 
-- Thomas Judd-Cooper ([GitHub](https://github.com/tomdango))
-- Sam Brown ([GitHub](https://github.com/samueldavidbrown))
-- Luke Pearson ([GitHub](https://github.com/lukepearson))
-- Kevin Kuszyk ([GitHub](https://github.com/kevinkuszyk))
-- Kai Spencer ([GitHub](https://github.com/KaiSpencer))
-- Ed Horsford ([GitHub](https://github.com/edwardhorsford))
+This feature is taken from [Mantine](https://github.com/mantinedev/mantine), have a look at their [polymorphic components documentation](https://mantine.dev/guides/polymorphic/) for more information.
 
-## Preparing releases
+Here is an example of how you can use a custom `Link` component with the `Header.Logo` component:
 
-Releases run in CI using github actions.
+```tsx
+import {
+  Header,
+  HeaderContainer,
+  HeaderService,
+  HeaderServiceLogo,
+} from 'nhsuk-frontend-react';
+import Link from 'next/link';
 
-To prepare a release create a new release TAG in github with your release version.
+export const AppHeader = () => (
+  <Header>
+    <HeaderContainer>
+      <HeaderService>
+        <HeaderServiceLogo as={Link} href="/" variant="logo-only" />
+      </HeaderService>
+    </HeaderContainer>
+  </Header>
+);
+```
 
-> `NPM_TOKEN` should be stored in the repositories [secrets in GitHub](https://github.com/NHSDigital/nhsuk-react-components/settings/secrets/actions)
+## Full list of polymorphic components
 
-- Create a new release with a tag like `major.minor.patch` against main.
-- If the change is a `beta` then select `pre-release` as true, this will make the `tag` point at `beta`. Otherwise the tag will be `latest`.
+<details>
+<summary>Click to expand</summary>
 
-## Thanks
+- `ActionLink`
+- `BackLink`
+- `Breadcrumb.BackLink`
+- `Breadcrumb.ListItem`
+- `Button`
+- `Card.Image`
+- `Card.Link`
+- `ContentList.ListItem`
+- `DoDontList.Label`
+- `ErrorSummary.ListItem`
+- `Fieldset.Legend`
+- `Figure.Image`
+- `Footer.ListItem`
+- `Header.Logo`
+- `Header.NavItem`
+- `Header.TransactionLink`
+- `Heading`
+- `Link`
+- `Pagination.Item`
+- `SummaryList.Row.ActionLink`
+- `Tabs.Title`
+- `TaskList.Item.NameAndHint`
+- `VisuallyHidden`
+- `WarningCallout.Label`
 
-<a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" width="153" height="30" alt="Chromatic" /></a>
+</details>
 
-Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
+## Testing
+
+To run the tests, you can use the following command:
+
+```bash
+pnpm test
+```
+
+## License
+
+The codebase is released under the MIT Licence, unless stated otherwise.
