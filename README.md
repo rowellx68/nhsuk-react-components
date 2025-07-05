@@ -14,6 +14,21 @@ A React component library for the NHS.UK frontend design system.
 pnpm add nhsuk-frontend nhsuk-react-components
 ```
 
+## Setting up
+
+> [!IMPORTANT]
+> To ensure that the styles are applied correctly, you must add both `js-enabled` and `nhsuk-frontend-supported` classes to the `body` of your application.
+
+Refer to the documentation of the framework you are using for more information on how to do this.
+
+## Documentation and examples
+
+TODO
+
+## Upgrading
+
+TODO
+
 ## Polymorphic components
 
 A few components in this library are polymorphic, allowing you to pass a different component as a prop and render as that component. This is particularly useful when you want to use a custom component, say a `Link` component from a routing library, instead of the default `a` tag.
