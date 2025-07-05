@@ -3,6 +3,7 @@ import type { CardVariant } from './Card';
 
 export type CardContextValue = {
   variant?: CardVariant;
+  clickable?: boolean;
 };
 
 const CardContext = createContext<CardContextValue>({});

@@ -13,7 +13,7 @@ import { BackLink } from 'nhsuk-react-components';
 
 <BackLink as="button" onClick={() => window.history.back()}>
   Back
-</BackLink>
+</BackLink>;
 ```
 
 ## Usage with frameworks and routers

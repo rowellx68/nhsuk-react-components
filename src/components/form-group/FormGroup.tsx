@@ -87,7 +87,7 @@ const _FormGroup = forwardRef<HTMLInputElement, FormGroupProps>(
       typeof error === 'string'
         ? [error]
         : typeof error === 'object'
-          ? Object.values(error)
+          ? Object.keys(error).map((key) => error[key])
           : [];
 
     const elementId = id || generatedId;

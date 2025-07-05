@@ -26,6 +26,8 @@
   ],
   "scripts": {
     "prebuild": "rm -rf ./dist",
+    "start": "pnpm run sb",
+    "dev": "pnpm run sb",
     "lint": "eslint .",
     "format": "prettier --write . && eslint --fix .",
     "build": "rollup -c && rollup -c ./rollup.dts.config.mjs",
@@ -45,6 +47,10 @@
   ],
   "author": "NHS England",
   "license": "MIT",
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "packageManager": "pnpm@10.12.4",
   "devDependencies": {
     "@babel/preset-env": "^7.28.0",
     "@eslint/js": "^9.30.1",

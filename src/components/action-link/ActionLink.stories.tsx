@@ -32,7 +32,7 @@ type Story = StoryObj<typeof ActionLink>;
 
 export const Default: Story = {
   args: {
-    children: 'Find a minor injuries unit',
+    children: 'Find your nearest A&E',
   },
   render: (args) => <ActionLink href="#" {...args} />,
 };

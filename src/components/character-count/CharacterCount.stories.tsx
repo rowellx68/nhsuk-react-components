@@ -16,7 +16,7 @@ export default meta;
 
 type Story = StoryObj<typeof CharacterCount>;
 
-export const WithMaxCharacters: Story = {
+export const MaxCharacters: Story = {
   args: {
     label: 'Can you provide more detail?',
     hint: 'Do not include personal or financial information, for example, your National Insurance number or credit card details.',
@@ -26,12 +26,45 @@ export const WithMaxCharacters: Story = {
   render: (args) => <CharacterCount {...args} />,
 };
 
-export const WithMaxWords: Story = {
+export const Threshold: Story = {
+  args: {
+    label: 'Can you provide more detail?',
+    hint: 'Do not include personal or financial information, for example, your National Insurance number or credit card details.',
+    variant: 'character-count',
+    maxCharacterLength: 10,
+    threshold: 8,
+  },
+  render: (args) => <CharacterCount {...args} />,
+};
+
+export const MaxWords: Story = {
   args: {
     label: 'Can you provide more detail?',
     hint: 'Do not include personal or financial information, for example, your National Insurance number or credit card details.',
     variant: 'word-count',
     maxWords: 5,
+  },
+  render: (args) => <CharacterCount {...args} />,
+};
+
+export const WithDefaultValue: Story = {
+  args: {
+    label: 'Can you provide more detail?',
+    hint: 'Do not include personal or financial information, for example, your National Insurance number or credit card details.',
+    variant: 'character-count',
+    maxCharacterLength: 70,
+    value: '123',
+  },
+  render: (args) => <CharacterCount {...args} />,
+};
+
+export const WithDefaultValueExceedingLimit: Story = {
+  args: {
+    label: 'Can you provide more detail?',
+    hint: 'Do not include personal or financial information, for example, your National Insurance number or credit card details.',
+    variant: 'character-count',
+    maxCharacterLength: 10,
+    value: '012345678901234567890123456789123',
   },
   render: (args) => <CharacterCount {...args} />,
 };

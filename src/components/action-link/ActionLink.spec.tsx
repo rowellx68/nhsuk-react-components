@@ -10,6 +10,6 @@ it('should render an anchor element', () => {
   const { container } = render(<Default />);
 
   expect(container.querySelector('a')).toBeInTheDocument();
-  expect(container).toHaveTextContent('Find a minor injuries unit');
+  expect(container).toHaveTextContent('Find your nearest A&E');
   expect(container).toMatchSnapshot();
 });

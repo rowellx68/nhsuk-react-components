@@ -2,7 +2,6 @@ import type { Preview } from '@storybook/react-vite';
 import React from 'react';
 
 import 'nhsuk-frontend/dist/nhsuk/nhsuk-frontend.min.css';
-import './styles.css';
 
 const preview: Preview = {
   parameters: {
@@ -12,6 +11,25 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    backgrounds: {
+      options: {
+        light: {
+          name: 'Light',
+          value: '#f0f4f5',
+        },
+        blue: {
+          name: 'Blue',
+          value: '#005eb8',
+        },
+        transparent: {
+          name: 'Transparent',
+          value: 'transparent',
+        },
+      },
+    },
+  },
+  initialGlobals: {
+    backgrounds: { value: 'light' },
   },
   tags: ['autodocs'],
   decorators: [

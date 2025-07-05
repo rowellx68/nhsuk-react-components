@@ -19,6 +19,7 @@ export type CardVariant =
   | 'primary'
   | 'secondary'
   | 'feature'
+  | 'top-task'
   | 'non-urgent'
   | 'urgent'
   | 'emergency';
@@ -57,7 +58,7 @@ type CardFactory = Factory<{
 const Card = factory<CardFactory>(
   ({ variant, clickable, className, ...props }, ref) => {
     return (
-      <CardProvider value={{ variant: variant }}>
+      <CardProvider value={{ variant: variant, clickable: clickable }}>
         <div
           className={clsx(
             'nhsuk-card',
@@ -139,7 +140,7 @@ const CardHeading = ({
   visuallyHiddenText,
   ...props
 }: CardHeadingProps) => {
-  const { variant } = useCardContext();
+  const { variant, clickable } = useCardContext();
   const careCard = variant && careCardVariants.includes(variant);
 
   const wrapperProps = {
@@ -161,8 +162,10 @@ const CardHeading = ({
             'nhsuk-card__heading':
               !variant || !careCardVariants.includes(variant),
             'nhsuk-card--care__heading': careCard,
-            'nhsuk-card__heading--feature nhsuk-u-font-size-24':
-              variant === 'feature',
+            'nhsuk-card__heading--feature': variant === 'feature',
+            'nhsuk-heading-m':
+              variant === 'feature' || (clickable && variant !== 'top-task'),
+            'nhsuk-heading-xs': variant === 'top-task',
           },
           className,
         )}

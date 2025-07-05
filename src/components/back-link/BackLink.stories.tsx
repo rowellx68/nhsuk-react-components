@@ -37,6 +37,20 @@ export const Default: Story = {
   render: (args) => <BackLink {...args} />,
 };
 
+export const Reverse: Story = {
+  args: {
+    children: 'Go back',
+    href: '#',
+    variant: 'reverse',
+  },
+  globals: {
+    backgrounds: {
+      value: 'blue',
+    },
+  },
+  render: (args) => <BackLink {...args} />,
+};
+
 export const AsButton: Story = {
   args: {
     children: 'Go back',

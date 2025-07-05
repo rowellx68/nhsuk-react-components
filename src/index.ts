@@ -14,7 +14,6 @@ export * from '@/components/task-list/TaskList';
 export * from '@/components/warning-callout/WarningCallout';
 
 // Core
-export * from '@/internal/base/Base';
 export * from '@/components/form-group/FormGroup';
 export * from '@/components/label/Label';
 export * from '@/components/visually-hidden/VisuallyHidden';

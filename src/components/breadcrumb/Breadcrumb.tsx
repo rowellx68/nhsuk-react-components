@@ -13,7 +13,9 @@ import {
 } from '@/types/shared';
 import { Factory, factory } from '@/internal/factory/factory';
 
-export type BreadcrumbProps = ElementProps<'nav'>;
+export type BreadcrumbProps = {
+  variant?: 'default' | 'reverse';
+} & ElementProps<'nav'>;
 
 type BreadcrumbFactory = Factory<{
   props: BreadcrumbProps;
@@ -26,10 +28,17 @@ type BreadcrumbFactory = Factory<{
 }>;
 
 const Breadcrumb = factory<BreadcrumbFactory>(
-  ({ children, className, ...props }: BreadcrumbProps, ref) => {
+  (
+    { children, className, variant = 'default', ...props }: BreadcrumbProps,
+    ref,
+  ) => {
     return (
       <nav
-        className={clsx('nhsuk-breadcrumb', className)}
+        className={clsx(
+          'nhsuk-breadcrumb',
+          { 'nhsuk-breadcrumb--reverse': variant === 'reverse' },
+          className,
+        )}
         aria-label="Breadcrumb"
         {...props}
         ref={ref}

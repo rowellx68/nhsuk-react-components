@@ -15,6 +15,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const H1: Story = {
+  name: 'h1',
   args: {
     as: 'h1',
     size: 'xl',
@@ -41,6 +42,7 @@ export const H1: Story = {
 };
 
 export const H2: Story = {
+  name: 'h2',
   args: {
     as: 'h2',
     size: 'l',
@@ -67,6 +69,7 @@ export const H2: Story = {
 };
 
 export const H3: Story = {
+  name: 'h3',
   args: {
     as: 'h3',
     size: 'm',
@@ -93,6 +96,7 @@ export const H3: Story = {
 };
 
 export const H4: Story = {
+  name: 'h4',
   args: {
     as: 'h4',
     size: 's',
@@ -119,6 +123,7 @@ export const H4: Story = {
 };
 
 export const H5: Story = {
+  name: 'h5',
   args: {
     as: 'h5',
     size: 'xs',
@@ -145,6 +150,7 @@ export const H5: Story = {
 };
 
 export const H6: Story = {
+  name: 'h6',
   args: {
     as: 'h6',
     size: 'xs',

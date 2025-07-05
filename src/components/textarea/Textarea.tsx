@@ -25,16 +25,19 @@ export type TextareaProps = BaseFormElementProps &
         variant: 'character-count';
         maxWords?: undefined;
         maxCharacterLength: number;
+        threshold?: number;
       }
     | {
         variant: 'word-count';
         maxWords: number;
         maxCharacterLength?: undefined;
+        threshold?: number;
       }
     | {
         variant?: 'textarea';
         maxWords?: undefined;
         maxCharacterLength?: undefined;
+        threshold?: undefined;
       }
   );
 
@@ -44,7 +47,7 @@ type TextareaFactory = Factory<{
 }>;
 
 const Textarea = factory<TextareaFactory>(
-  ({ variant = 'textarea', maxCharacterLength, maxWords, ...props }, ref) => {
+  ({ variant = 'textarea', rows = 5, threshold, maxCharacterLength, maxWords, ...props }, ref) => {
     useImperativeHandle(ref, () => internalRef.current as HTMLTextAreaElement);
     const internalRef = useRef<HTMLTextAreaElement>(null);
 
@@ -58,6 +61,7 @@ const Textarea = factory<TextareaFactory>(
             'data-maxwords': variant === 'word-count' ? maxWords : undefined,
             'data-maxlength':
               variant === 'character-count' ? maxCharacterLength : undefined,
+            'data-threshold': threshold,
           }
         : {}),
     };
@@ -109,6 +113,7 @@ const Textarea = factory<TextareaFactory>(
                   },
                   className,
                 )}
+                rows={rows}
                 {...rest}
               />
               {characterCount && (

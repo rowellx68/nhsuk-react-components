@@ -8,9 +8,9 @@ import meta, {
   Secondary as SecondaryStory,
   WithImage as WithImageStory,
   AToZ as AToZStory,
-  NonUrgentCareCard as NonUrgentCareCardStory,
-  UrgentCareCard as UrgentCareCardStory,
-  EmergencyCareCard as EmergencyCareCardStory,
+  CareCardNonUrgent as NonUrgentCareCardStory,
+  CareCardUrgent as UrgentCareCardStory,
+  CareCardEmergency as EmergencyCareCardStory,
 } from './Card.stories';
 
 const TopTask = composeStory(TopTaskStory, meta);
@@ -58,7 +58,7 @@ it('should render the card component with a feature variant', () => {
   const { container } = render(<AToZ />);
 
   expect(container).toMatchSnapshot();
-  expect(container.querySelector('h2')).toBeInTheDocument();
+  expect(container.querySelector('h3')).toBeInTheDocument();
   expect(container.querySelector('.nhsuk-card--feature')).toBeInTheDocument();
 });
 
@@ -66,7 +66,7 @@ it('should render the card component with a non-urgent variant', () => {
   const { container } = render(<NonUrgentCareCard />);
 
   expect(container).toMatchSnapshot();
-  expect(container.querySelector('h2')).toBeInTheDocument();
+  expect(container.querySelector('h3')).toBeInTheDocument();
   expect(
     container.querySelector('.nhsuk-u-visually-hidden'),
   ).toBeInTheDocument();
@@ -79,7 +79,7 @@ it('should render the card component with an urgent variant', () => {
   const { container } = render(<UrgentCareCard />);
 
   expect(container).toMatchSnapshot();
-  expect(container.querySelector('h2')).toBeInTheDocument();
+  expect(container.querySelector('h3')).toBeInTheDocument();
   expect(
     container.querySelector('.nhsuk-u-visually-hidden'),
   ).toBeInTheDocument();
@@ -92,7 +92,7 @@ it('should render the card component with an emergency variant', () => {
   const { container } = render(<EmergencyCareCard />);
 
   expect(container).toMatchSnapshot();
-  expect(container.querySelector('h2')).toBeInTheDocument();
+  expect(container.querySelector('h3')).toBeInTheDocument();
   expect(
     container.querySelector('.nhsuk-u-visually-hidden'),
   ).toBeInTheDocument();

@@ -9,11 +9,11 @@ exports[`should render the card component with a feature variant 1`] = `
       <div
         class="nhsuk-card__content nhsuk-card__content--feature"
       >
-        <h2
+        <h3
           class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24"
         >
           A
-        </h2>
+        </h3>
         <ul
           class="nhsuk-list nhsuk-list--border"
         >
@@ -56,7 +56,7 @@ exports[`should render the card component with a non-urgent variant 1`] = `
     <div
       class="nhsuk-card--care__heading-container"
     >
-      <h2
+      <h3
         class="nhsuk-card--care__heading"
       >
         <span
@@ -69,7 +69,7 @@ exports[`should render the card component with a non-urgent variant 1`] = `
           </span>
           Speak to a GP if:
         </span>
-      </h2>
+      </h3>
       <span
         aria-hidden="true"
         class="nhsuk-card--care__arrow"
@@ -220,7 +220,7 @@ exports[`should render the card component with an emergency variant 1`] = `
     <div
       class="nhsuk-card--care__heading-container"
     >
-      <h2
+      <h3
         class="nhsuk-card--care__heading"
       >
         <span
@@ -233,7 +233,7 @@ exports[`should render the card component with an emergency variant 1`] = `
           </span>
           Go to A&E or call 999 if:
         </span>
-      </h2>
+      </h3>
       <span
         aria-hidden="true"
         class="nhsuk-card--care__arrow"
@@ -321,7 +321,7 @@ exports[`should render the card component with an urgent variant 1`] = `
     <div
       class="nhsuk-card--care__heading-container"
     >
-      <h2
+      <h3
         class="nhsuk-card--care__heading"
       >
         <span
@@ -334,7 +334,7 @@ exports[`should render the card component with an urgent variant 1`] = `
           </span>
           Ask for an urgent GP appointment if:
         </span>
-      </h2>
+      </h3>
       <span
         aria-hidden="true"
         class="nhsuk-card--care__arrow"

@@ -30,14 +30,14 @@ const BackLink = polymorphicFactory<BackLinkFactory>(
     ref,
   ) => {
     return (
-      <div className="nhsuk-back-link">
+      <div
+        className={clsx('nhsuk-back-link', {
+          'nhsuk-back-link--reverse': variant === 'reverse',
+        })}
+      >
         <Base
           as={component}
-          className={clsx(
-            'nhsuk-back-link__link',
-            { 'nhsuk-back-link--reverse': variant === 'reverse' },
-            className,
-          )}
+          className={clsx('nhsuk-back-link__link', className)}
           {...props}
           ref={ref}
         >

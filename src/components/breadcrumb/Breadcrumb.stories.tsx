@@ -39,3 +39,30 @@ export const Default: Story = {
     </Breadcrumb>
   ),
 };
+
+export const Reverse: Story = {
+  args: {
+    variant: 'reverse',
+  },
+  globals: {
+    backgrounds: {
+      value: 'blue',
+    },
+  },
+  render: (args) => (
+    <Breadcrumb {...args}>
+      <Breadcrumb.List>
+        <Breadcrumb.ListItem href="/level-one">Level one</Breadcrumb.ListItem>
+        <Breadcrumb.ListItem href="/level-one/level-two">
+          Level two
+        </Breadcrumb.ListItem>
+        <Breadcrumb.ListItem href="/level-one/level-two/level-three">
+          Level three
+        </Breadcrumb.ListItem>
+      </Breadcrumb.List>
+      <Breadcrumb.BackLink href="/level-one/level-two/level-three">
+        Level three
+      </Breadcrumb.BackLink>
+    </Breadcrumb>
+  ),
+};

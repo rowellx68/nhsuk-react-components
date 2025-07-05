@@ -3,12 +3,12 @@ import { it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import { composeStory } from '@storybook/react-vite';
 import meta, {
-  Primary as PrimaryStory,
-  PrimaryButtonAsLink as PrimaryButtonAsLinkStory,
+  Default as DefaultButtonStory,
+  DefaultAsLink as DefaultButtonAsLinkStory,
 } from './Button.stories';
 
-const Button = composeStory(PrimaryStory, meta);
-const ButtonAsLink = composeStory(PrimaryButtonAsLinkStory, meta);
+const Button = composeStory(DefaultButtonStory, meta);
+const ButtonAsLink = composeStory(DefaultButtonAsLinkStory, meta);
 
 it('should render the Button component as a button', () => {
   const { container } = render(<Button>Submit</Button>);

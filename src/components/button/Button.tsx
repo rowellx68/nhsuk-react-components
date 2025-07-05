@@ -12,6 +12,7 @@ import { AsElementProps } from '@/types/shared';
 
 export type ButtonProps = {
   variant?:
+    | 'default'
     | 'primary'
     | 'secondary'
     | 'secondary-solid'
@@ -34,7 +35,7 @@ const Button = polymorphicFactory<ButtonFactory>(
     {
       className,
       children,
-      variant = 'primary',
+      variant = 'default',
       disabled,
       preventDoubleClick,
       type = 'button',
@@ -73,7 +74,8 @@ const Button = polymorphicFactory<ButtonFactory>(
         className={clsx(
           'nhsuk-button',
           {
-            [`nhsuk-button--${variant}`]: variant !== 'primary',
+            [`nhsuk-button--${variant}`]:
+              variant !== 'primary' && variant !== 'default',
             'nhsuk-button--disabled': disabled,
           },
           className,
