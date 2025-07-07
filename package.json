@@ -108,161 +108,9 @@
       "import": "./dist/assets/NhsLogo.mjs",
       "require": "./dist/assets/NhsLogo.js"
     },
-    "./components/a-to-z": {
-      "import": "./dist/components/a-to-z/AToZ.mjs",
-      "require": "./dist/components/a-to-z/AToZ.js"
-    },
-    "./components/action-link": {
-      "import": "./dist/components/action-link/ActionLink.mjs",
-      "require": "./dist/components/action-link/ActionLink.js"
-    },
-    "./components/back-link": {
-      "import": "./dist/components/back-link/BackLink.mjs",
-      "require": "./dist/components/back-link/BackLink.js"
-    },
-    "./components/back-to-top-link": {
-      "import": "./dist/components/back-to-top-link/BackToTopLink.mjs",
-      "require": "./dist/components/back-to-top-link/BackToTopLink.js"
-    },
-    "./components/breadcrumb": {
-      "import": "./dist/components/breadcrumb/Breadcrumb.mjs",
-      "require": "./dist/components/breadcrumb/Breadcrumb.js"
-    },
-    "./components/button": {
-      "import": "./dist/components/button/Button.mjs",
-      "require": "./dist/components/button/Button.js"
-    },
-    "./components/card": {
-      "import": "./dist/components/card/Card.mjs",
-      "require": "./dist/components/card/Card.js"
-    },
-    "./components/character-count": {
-      "import": "./dist/components/character-count/CharacterCount.mjs",
-      "require": "./dist/components/character-count/CharacterCount.js"
-    },
-    "./components/checkbox": {
-      "import": "./dist/components/checkbox/Checkbox.mjs",
-      "require": "./dist/components/checkbox/Checkbox.js"
-    },
-    "./components/contents-list": {
-      "import": "./dist/components/contents-list/ContentsList.mjs",
-      "require": "./dist/components/contents-list/ContentsList.js"
-    },
-    "./components/date-input": {
-      "import": "./dist/components/date-input/DateInput.mjs",
-      "require": "./dist/components/date-input/DateInput.js"
-    },
-    "./components/details": {
-      "import": "./dist/components/details/Details.mjs",
-      "require": "./dist/components/details/Details.js"
-    },
-    "./components/do-dont-list": {
-      "import": "./dist/components/do-dont-list/DoDontList.mjs",
-      "require": "./dist/components/do-dont-list/DoDontList.js"
-    },
-    "./components/error-message": {
-      "import": "./dist/components/error-message/ErrorMessage.mjs",
-      "require": "./dist/components/error-message/ErrorMessage.js"
-    },
-    "./components/error-summary": {
-      "import": "./dist/components/error-summary/ErrorSummary.mjs",
-      "require": "./dist/components/error-summary/ErrorSummary.js"
-    },
-    "./components/expander": {
-      "import": "./dist/components/expander/Expander.mjs",
-      "require": "./dist/components/expander/Expander.js"
-    },
-    "./components/fieldset": {
-      "import": "./dist/components/fieldset/Fieldset.mjs",
-      "require": "./dist/components/fieldset/Fieldset.js"
-    },
-    "./components/figure": {
-      "import": "./dist/components/figure/Figure.mjs",
-      "require": "./dist/components/figure/Figure.js"
-    },
-    "./components/footer": {
-      "import": "./dist/components/footer/Footer.mjs",
-      "require": "./dist/components/footer/Footer.js"
-    },
-    "./components/form-group": {
-      "import": "./dist/components/form-group/FormGroup.mjs",
-      "require": "./dist/components/form-group/FormGroup.js"
-    },
-    "./components/header": {
-      "import": "./dist/components/header/Header.mjs",
-      "require": "./dist/components/header/Header.js"
-    },
-    "./components/hero": {
-      "import": "./dist/components/hero/Hero.mjs",
-      "require": "./dist/components/hero/Hero.js"
-    },
-    "./components/hint": {
-      "import": "./dist/components/hint/Hint.mjs",
-      "require": "./dist/components/hint/Hint.js"
-    },
-    "./components/input": {
-      "import": "./dist/components/input/Input.mjs",
-      "require": "./dist/components/input/Input.js"
-    },
-    "./components/inset-text": {
-      "import": "./dist/components/inset-text/InsetText.mjs",
-      "require": "./dist/components/inset-text/InsetText.js"
-    },
-    "./components/label": {
-      "import": "./dist/components/label/Label.mjs",
-      "require": "./dist/components/label/Label.js"
-    },
-    "./components/pagination": {
-      "import": "./dist/components/pagination/Pagination.mjs",
-      "require": "./dist/components/pagination/Pagination.js"
-    },
-    "./components/panel": {
-      "import": "./dist/components/panel/Panel.mjs",
-      "require": "./dist/components/panel/Panel.js"
-    },
-    "./components/radio": {
-      "import": "./dist/components/radio/Radio.mjs",
-      "require": "./dist/components/radio/Radio.js"
-    },
-    "./components/select": {
-      "import": "./dist/components/select/Select.mjs",
-      "require": "./dist/components/select/Select.js"
-    },
-    "./components/skip-link": {
-      "import": "./dist/components/skip-link/SkipLink.mjs",
-      "require": "./dist/components/skip-link/SkipLink.js"
-    },
-    "./components/summary-list": {
-      "import": "./dist/components/summary-list/SummaryList.mjs",
-      "require": "./dist/components/summary-list/SummaryList.js"
-    },
-    "./components/table": {
-      "import": "./dist/components/table/Table.mjs",
-      "require": "./dist/components/table/Table.js"
-    },
-    "./components/tabs": {
-      "import": "./dist/components/tabs/Tabs.mjs",
-      "require": "./dist/components/tabs/Tabs.js"
-    },
-    "./components/tag": {
-      "import": "./dist/components/tag/Tag.mjs",
-      "require": "./dist/components/tag/Tag.js"
-    },
-    "./components/task-list": {
-      "import": "./dist/components/task-list/TaskList.mjs",
-      "require": "./dist/components/task-list/TaskList.js"
-    },
-    "./components/textarea": {
-      "import": "./dist/components/textarea/Textarea.mjs",
-      "require": "./dist/components/textarea/Textarea.js"
-    },
     "./components/visually-hidden": {
       "import": "./dist/components/visually-hidden/VisuallyHidden.mjs",
       "require": "./dist/components/visually-hidden/VisuallyHidden.js"
-    },
-    "./components/warning-callout": {
-      "import": "./dist/components/warning-callout/WarningCallout.mjs",
-      "require": "./dist/components/warning-callout/WarningCallout.js"
     },
     "./icons/arrow-left": {
       "import": "./dist/icons/arrow-left/ArrowLeft.mjs",
@@ -308,45 +156,197 @@
       "import": "./dist/icons/tick/Tick.mjs",
       "require": "./dist/icons/tick/Tick.js"
     },
-    "./styles/layout/container": {
-      "import": "./dist/styles/layout/container/Container.mjs",
-      "require": "./dist/styles/layout/container/Container.js"
+    "./components/content-presentation/details": {
+      "import": "./dist/components/content-presentation/details/Details.mjs",
+      "require": "./dist/components/content-presentation/details/Details.js"
     },
-    "./styles/layout/grid": {
-      "import": "./dist/styles/layout/grid/Grid.mjs",
-      "require": "./dist/styles/layout/grid/Grid.js"
+    "./components/content-presentation/do-dont-list": {
+      "import": "./dist/components/content-presentation/do-dont-list/DoDontList.mjs",
+      "require": "./dist/components/content-presentation/do-dont-list/DoDontList.js"
     },
-    "./styles/layout/main": {
-      "import": "./dist/styles/layout/main/Main.mjs",
-      "require": "./dist/styles/layout/main/Main.js"
+    "./components/content-presentation/expander": {
+      "import": "./dist/components/content-presentation/expander/Expander.mjs",
+      "require": "./dist/components/content-presentation/expander/Expander.js"
     },
-    "./styles/layout/reading-width": {
-      "import": "./dist/styles/layout/reading-width/ReadingWidth.mjs",
-      "require": "./dist/styles/layout/reading-width/ReadingWidth.js"
+    "./components/content-presentation/figure": {
+      "import": "./dist/components/content-presentation/figure/Figure.mjs",
+      "require": "./dist/components/content-presentation/figure/Figure.js"
     },
-    "./styles/typography/heading": {
-      "import": "./dist/styles/typography/heading/Heading.mjs",
-      "require": "./dist/styles/typography/heading/Heading.js"
+    "./components/content-presentation/hero": {
+      "import": "./dist/components/content-presentation/hero/Hero.mjs",
+      "require": "./dist/components/content-presentation/hero/Hero.js"
     },
-    "./styles/typography/heading-caption": {
-      "import": "./dist/styles/typography/heading-caption/HeadingCaption.mjs",
-      "require": "./dist/styles/typography/heading-caption/HeadingCaption.js"
+    "./components/content-presentation/inset-text": {
+      "import": "./dist/components/content-presentation/inset-text/InsetText.mjs",
+      "require": "./dist/components/content-presentation/inset-text/InsetText.js"
     },
-    "./styles/typography/link": {
-      "import": "./dist/styles/typography/link/Link.mjs",
-      "require": "./dist/styles/typography/link/Link.js"
+    "./components/content-presentation/panel": {
+      "import": "./dist/components/content-presentation/panel/Panel.mjs",
+      "require": "./dist/components/content-presentation/panel/Panel.js"
     },
-    "./styles/typography/list": {
-      "import": "./dist/styles/typography/list/List.mjs",
-      "require": "./dist/styles/typography/list/List.js"
+    "./components/content-presentation/summary-list": {
+      "import": "./dist/components/content-presentation/summary-list/SummaryList.mjs",
+      "require": "./dist/components/content-presentation/summary-list/SummaryList.js"
     },
-    "./styles/typography/paragraph": {
-      "import": "./dist/styles/typography/paragraph/Paragraph.mjs",
-      "require": "./dist/styles/typography/paragraph/Paragraph.js"
+    "./components/content-presentation/table": {
+      "import": "./dist/components/content-presentation/table/Table.mjs",
+      "require": "./dist/components/content-presentation/table/Table.js"
     },
-    "./styles/typography/section-break": {
-      "import": "./dist/styles/typography/section-break/SectionBreak.mjs",
-      "require": "./dist/styles/typography/section-break/SectionBreak.js"
+    "./components/content-presentation/tabs": {
+      "import": "./dist/components/content-presentation/tabs/Tabs.mjs",
+      "require": "./dist/components/content-presentation/tabs/Tabs.js"
+    },
+    "./components/content-presentation/tag": {
+      "import": "./dist/components/content-presentation/tag/Tag.mjs",
+      "require": "./dist/components/content-presentation/tag/Tag.js"
+    },
+    "./components/content-presentation/task-list": {
+      "import": "./dist/components/content-presentation/task-list/TaskList.mjs",
+      "require": "./dist/components/content-presentation/task-list/TaskList.js"
+    },
+    "./components/content-presentation/warning-callout": {
+      "import": "./dist/components/content-presentation/warning-callout/WarningCallout.mjs",
+      "require": "./dist/components/content-presentation/warning-callout/WarningCallout.js"
+    },
+    "./components/form-elements/button": {
+      "import": "./dist/components/form-elements/button/Button.mjs",
+      "require": "./dist/components/form-elements/button/Button.js"
+    },
+    "./components/form-elements/character-count": {
+      "import": "./dist/components/form-elements/character-count/CharacterCount.mjs",
+      "require": "./dist/components/form-elements/character-count/CharacterCount.js"
+    },
+    "./components/form-elements/checkbox": {
+      "import": "./dist/components/form-elements/checkbox/Checkbox.mjs",
+      "require": "./dist/components/form-elements/checkbox/Checkbox.js"
+    },
+    "./components/form-elements/date-input": {
+      "import": "./dist/components/form-elements/date-input/DateInput.mjs",
+      "require": "./dist/components/form-elements/date-input/DateInput.js"
+    },
+    "./components/form-elements/error-message": {
+      "import": "./dist/components/form-elements/error-message/ErrorMessage.mjs",
+      "require": "./dist/components/form-elements/error-message/ErrorMessage.js"
+    },
+    "./components/form-elements/error-summary": {
+      "import": "./dist/components/form-elements/error-summary/ErrorSummary.mjs",
+      "require": "./dist/components/form-elements/error-summary/ErrorSummary.js"
+    },
+    "./components/form-elements/fieldset": {
+      "import": "./dist/components/form-elements/fieldset/Fieldset.mjs",
+      "require": "./dist/components/form-elements/fieldset/Fieldset.js"
+    },
+    "./components/form-elements/form-group": {
+      "import": "./dist/components/form-elements/form-group/FormGroup.mjs",
+      "require": "./dist/components/form-elements/form-group/FormGroup.js"
+    },
+    "./components/form-elements/hint": {
+      "import": "./dist/components/form-elements/hint/Hint.mjs",
+      "require": "./dist/components/form-elements/hint/Hint.js"
+    },
+    "./components/form-elements/input": {
+      "import": "./dist/components/form-elements/input/Input.mjs",
+      "require": "./dist/components/form-elements/input/Input.js"
+    },
+    "./components/form-elements/label": {
+      "import": "./dist/components/form-elements/label/Label.mjs",
+      "require": "./dist/components/form-elements/label/Label.js"
+    },
+    "./components/form-elements/radio": {
+      "import": "./dist/components/form-elements/radio/Radio.mjs",
+      "require": "./dist/components/form-elements/radio/Radio.js"
+    },
+    "./components/form-elements/select": {
+      "import": "./dist/components/form-elements/select/Select.mjs",
+      "require": "./dist/components/form-elements/select/Select.js"
+    },
+    "./components/form-elements/textarea": {
+      "import": "./dist/components/form-elements/textarea/Textarea.mjs",
+      "require": "./dist/components/form-elements/textarea/Textarea.js"
+    },
+    "./components/layout/container": {
+      "import": "./dist/components/layout/container/Container.mjs",
+      "require": "./dist/components/layout/container/Container.js"
+    },
+    "./components/layout/grid": {
+      "import": "./dist/components/layout/grid/Grid.mjs",
+      "require": "./dist/components/layout/grid/Grid.js"
+    },
+    "./components/layout/main": {
+      "import": "./dist/components/layout/main/Main.mjs",
+      "require": "./dist/components/layout/main/Main.js"
+    },
+    "./components/layout/reading-width": {
+      "import": "./dist/components/layout/reading-width/ReadingWidth.mjs",
+      "require": "./dist/components/layout/reading-width/ReadingWidth.js"
+    },
+    "./components/navigation/a-to-z": {
+      "import": "./dist/components/navigation/a-to-z/AToZ.mjs",
+      "require": "./dist/components/navigation/a-to-z/AToZ.js"
+    },
+    "./components/navigation/action-link": {
+      "import": "./dist/components/navigation/action-link/ActionLink.mjs",
+      "require": "./dist/components/navigation/action-link/ActionLink.js"
+    },
+    "./components/navigation/back-link": {
+      "import": "./dist/components/navigation/back-link/BackLink.mjs",
+      "require": "./dist/components/navigation/back-link/BackLink.js"
+    },
+    "./components/navigation/back-to-top-link": {
+      "import": "./dist/components/navigation/back-to-top-link/BackToTopLink.mjs",
+      "require": "./dist/components/navigation/back-to-top-link/BackToTopLink.js"
+    },
+    "./components/navigation/breadcrumb": {
+      "import": "./dist/components/navigation/breadcrumb/Breadcrumb.mjs",
+      "require": "./dist/components/navigation/breadcrumb/Breadcrumb.js"
+    },
+    "./components/navigation/card": {
+      "import": "./dist/components/navigation/card/Card.mjs",
+      "require": "./dist/components/navigation/card/Card.js"
+    },
+    "./components/navigation/contents-list": {
+      "import": "./dist/components/navigation/contents-list/ContentsList.mjs",
+      "require": "./dist/components/navigation/contents-list/ContentsList.js"
+    },
+    "./components/navigation/footer": {
+      "import": "./dist/components/navigation/footer/Footer.mjs",
+      "require": "./dist/components/navigation/footer/Footer.js"
+    },
+    "./components/navigation/header": {
+      "import": "./dist/components/navigation/header/Header.mjs",
+      "require": "./dist/components/navigation/header/Header.js"
+    },
+    "./components/navigation/pagination": {
+      "import": "./dist/components/navigation/pagination/Pagination.mjs",
+      "require": "./dist/components/navigation/pagination/Pagination.js"
+    },
+    "./components/navigation/skip-link": {
+      "import": "./dist/components/navigation/skip-link/SkipLink.mjs",
+      "require": "./dist/components/navigation/skip-link/SkipLink.js"
+    },
+    "./components/typography/heading": {
+      "import": "./dist/components/typography/heading/Heading.mjs",
+      "require": "./dist/components/typography/heading/Heading.js"
+    },
+    "./components/typography/heading-caption": {
+      "import": "./dist/components/typography/heading-caption/HeadingCaption.mjs",
+      "require": "./dist/components/typography/heading-caption/HeadingCaption.js"
+    },
+    "./components/typography/link": {
+      "import": "./dist/components/typography/link/Link.mjs",
+      "require": "./dist/components/typography/link/Link.js"
+    },
+    "./components/typography/list": {
+      "import": "./dist/components/typography/list/List.mjs",
+      "require": "./dist/components/typography/list/List.js"
+    },
+    "./components/typography/paragraph": {
+      "import": "./dist/components/typography/paragraph/Paragraph.mjs",
+      "require": "./dist/components/typography/paragraph/Paragraph.js"
+    },
+    "./components/typography/section-break": {
+      "import": "./dist/components/typography/section-break/SectionBreak.mjs",
+      "require": "./dist/components/typography/section-break/SectionBreak.js"
     }
   }
 }

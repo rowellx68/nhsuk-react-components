@@ -58,7 +58,12 @@ export default tseslint.config(
   },
   {
     files: ['**/*.tsx'],
-    ignores: ['**/*.stories.tsx', '**/*.spec.tsx', '**/.storybook/*'],
+    ignores: [
+      '**/*.stories.tsx',
+      '**/*.spec.tsx',
+      '**/*.test.tsx',
+      '**/.storybook/*',
+    ],
     rules: {
       'no-restricted-imports': [
         'error',

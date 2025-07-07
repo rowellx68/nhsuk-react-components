@@ -27,6 +27,13 @@ const preview: Preview = {
         },
       },
     },
+    options: {
+      storySort: {
+        order: [
+          'Patterns',
+        ],
+      },
+    },
   },
   initialGlobals: {
     backgrounds: { value: 'light' },
