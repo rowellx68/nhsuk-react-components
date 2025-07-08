@@ -20,7 +20,7 @@ const meta: Meta<typeof Table> = {
     'Table.Cell': Table.Cell,
   } as Record<string, React.ComponentType<any>>,
   argTypes: {
-    variant: {
+    modifier: {
       control: false,
       table: {
         type: {
@@ -68,7 +68,7 @@ export const TwoColumn: Story = {
 
 export const ThreeColumn: Story = {
   render: (args) => (
-    <Table {...args} variant="responsive">
+    <Table {...args} modifier="responsive">
       <Table.Caption>Ibuprofen tablet dosages for children</Table.Caption>
       <Table.Head>
         <Table.Row>
@@ -101,7 +101,7 @@ export const ThreeColumn: Story = {
 export const ThreeColumnWithFirstCellAsHeader: Story = {
   args: {
     firstCellIsHeader: true,
-    variant: 'responsive',
+    modifier: 'responsive',
   },
   render: (args) => (
     <Container>
@@ -114,25 +114,25 @@ export const ThreeColumnWithFirstCellAsHeader: Story = {
             <Table.Head>
               <Table.Row>
                 <Table.Cell>Item</Table.Cell>
-                <Table.Cell variant="numeric">Current charge</Table.Cell>
-                <Table.Cell variant="numeric">New charge</Table.Cell>
+                <Table.Cell modifier="numeric">Current charge</Table.Cell>
+                <Table.Cell modifier="numeric">New charge</Table.Cell>
               </Table.Row>
             </Table.Head>
             <Table.Body>
               <Table.Row role="none">
                 <Table.Cell>3-month</Table.Cell>
-                <Table.Cell variant="numeric">£31.25</Table.Cell>
-                <Table.Cell variant="numeric">£32.05</Table.Cell>
+                <Table.Cell modifier="numeric">£31.25</Table.Cell>
+                <Table.Cell modifier="numeric">£32.05</Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>12-month</Table.Cell>
-                <Table.Cell variant="numeric">£111.60</Table.Cell>
-                <Table.Cell variant="numeric">£114.50</Table.Cell>
+                <Table.Cell modifier="numeric">£111.60</Table.Cell>
+                <Table.Cell modifier="numeric">£114.50</Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>HRT</Table.Cell>
-                <Table.Cell variant="numeric">£19.30</Table.Cell>
-                <Table.Cell variant="numeric">£19.80</Table.Cell>
+                <Table.Cell modifier="numeric">£19.30</Table.Cell>
+                <Table.Cell modifier="numeric">£19.80</Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table>

@@ -30,7 +30,7 @@ export const MiniHub: Story = {
       <Header {...args}>
         <Header.Container>
           <Header.Service>
-            <Header.ServiceLogo href="#" variant="logo-only" />
+            <Header.ServiceLogo href="#" modifier="logo-only" />
           </Header.Service>
         </Header.Container>
       </Header>
@@ -69,7 +69,7 @@ export const MiniHub: Story = {
                 <ContentsList.Item href="#">Living with AMD</ContentsList.Item>
               </ContentsList>
 
-              <List variant="unordered">
+              <List modifier="unordered">
                 <List.Item>
                   <strong>
                     Age-related macular degeneration (AMD) is a common condition
@@ -95,7 +95,7 @@ export const MiniHub: Story = {
               </List>
 
               <Paragraph
-                variant="small"
+                modifier="small"
                 className="nhsuk-u-margin-top-7 nhsuk-u-secondary-text-color"
               >
                 Page last reviewed: 27 March 2018 <br />

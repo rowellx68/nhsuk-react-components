@@ -29,7 +29,7 @@ it('should render the top task card component', () => {
   expect(container.querySelector('h5')).toBeInTheDocument();
 });
 
-it('should render the card component with a primary variant', () => {
+it('should render the card component with a primary modifier', () => {
   const { container } = render(<Primary />);
 
   expect(container).toMatchSnapshot();
@@ -39,7 +39,7 @@ it('should render the card component with a primary variant', () => {
   ).toBeInTheDocument();
 });
 
-it('should render the card component with a secondary variant', () => {
+it('should render the card component with a secondary modifier', () => {
   const { container } = render(<Secondary />);
 
   expect(container).toMatchSnapshot();
@@ -54,7 +54,7 @@ it('should render the card component with an image', () => {
   expect(container.querySelector('img')).toBeInTheDocument();
 });
 
-it('should render the card component with a feature variant', () => {
+it('should render the card component with a feature modifier', () => {
   const { container } = render(<AToZ />);
 
   expect(container).toMatchSnapshot();
@@ -62,7 +62,7 @@ it('should render the card component with a feature variant', () => {
   expect(container.querySelector('.nhsuk-card--feature')).toBeInTheDocument();
 });
 
-it('should render the card component with a non-urgent variant', () => {
+it('should render the card component with a non-urgent modifier', () => {
   const { container } = render(<NonUrgentCareCard />);
 
   expect(container).toMatchSnapshot();
@@ -75,7 +75,7 @@ it('should render the card component with a non-urgent variant', () => {
   ).toBeInTheDocument();
 });
 
-it('should render the card component with an urgent variant', () => {
+it('should render the card component with an urgent modifier', () => {
   const { container } = render(<UrgentCareCard />);
 
   expect(container).toMatchSnapshot();
@@ -88,7 +88,7 @@ it('should render the card component with an urgent variant', () => {
   ).toBeInTheDocument();
 });
 
-it('should render the card component with an emergency variant', () => {
+it('should render the card component with an emergency modifier', () => {
   const { container } = render(<EmergencyCareCard />);
 
   expect(container).toMatchSnapshot();

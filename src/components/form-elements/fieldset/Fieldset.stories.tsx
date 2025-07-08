@@ -24,7 +24,7 @@ type Story = StoryObj<typeof Fieldset>;
 export const Example: Story = {
   render: (args) => (
     <Fieldset {...args}>
-      <Fieldset.Legend size="l" variant="page-heading">
+      <Fieldset.Legend size="l" modifier="page-heading">
         What is your address?
       </Fieldset.Legend>
       <Input
@@ -47,7 +47,7 @@ export const Example: Story = {
 export const WithPageHeadingLegend: Story = {
   render: (args) => (
     <Fieldset {...args}>
-      <Fieldset.Legend size="l" variant="page-heading">
+      <Fieldset.Legend size="l" modifier="page-heading">
         What is your address?
       </Fieldset.Legend>
     </Fieldset>

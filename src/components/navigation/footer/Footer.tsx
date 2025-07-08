@@ -58,19 +58,19 @@ const FooterContent = ({
   );
 };
 
-export type FooterListProps = { variant?: 'meta-links' } & ElementProps<'ul'>;
+export type FooterListProps = { modifier?: 'meta-links' } & ElementProps<'ul'>;
 
 const FooterList = ({
   className,
   children,
-  variant,
+  modifier,
   ...props
 }: FooterListProps) => {
   return (
     <ul
       className={clsx(
         'nhsuk-footer__list',
-        { 'nhsuk-footer__meta': variant === 'meta-links' },
+        { 'nhsuk-footer__meta': modifier === 'meta-links' },
         className,
       )}
       {...props}
@@ -81,7 +81,7 @@ const FooterList = ({
 };
 
 export type FooterListItemProps = {
-  variant?: 'default';
+  modifier?: 'default';
 } & BaseProps;
 
 type FooterListItemFactory = PolymorphicFactory<{
@@ -96,7 +96,7 @@ const FooterListItem = polymorphicFactory<FooterListItemFactory>(
       className,
       children,
       as: component = 'a',
-      variant = 'default',
+      modifier = 'default',
       ...props
     }: FooterListItemProps & AsElementProps,
     ref,
@@ -104,7 +104,7 @@ const FooterListItem = polymorphicFactory<FooterListItemFactory>(
     return (
       <li
         className={clsx('nhsuk-footer__list-item', {
-          'nhsuk-footer-default__list-item': variant === 'default',
+          'nhsuk-footer-default__list-item': modifier === 'default',
         })}
       >
         <Base<any>

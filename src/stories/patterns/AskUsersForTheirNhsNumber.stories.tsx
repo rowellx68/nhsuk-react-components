@@ -30,7 +30,7 @@ export const AskUsersForTheirNhsNumber: Story = {
       <Header {...args}>
         <Header.Container>
           <Header.Service>
-            <Header.ServiceLogo href="#" variant="logo-only" />
+            <Header.ServiceLogo href="#" modifier="logo-only" />
           </Header.Service>
         </Header.Container>
       </Header>
@@ -41,7 +41,7 @@ export const AskUsersForTheirNhsNumber: Story = {
               <form>
                 <Input
                   label="What is your NHS number?"
-                  labelProps={{ variant: 'page-heading', size: 'l' }}
+                  labelProps={{ modifier: 'page-heading', size: 'l' }}
                   width="10"
                   hint={
                     <>

@@ -27,7 +27,7 @@ import { NhsLogo } from '@/assets/NhsLogo';
 import { UserIcon } from '@/icons/user/User';
 
 export type HeaderProps = {
-  variant?: 'default' | 'organisation';
+  modifier?: 'default' | 'organisation';
   colour?: 'default' | 'white';
 } & ElementProps<'header', 'color'>;
 
@@ -56,7 +56,7 @@ const Header = factory<HeaderFactory>(
     {
       children,
       className,
-      variant = 'default',
+      modifier = 'default',
       colour = 'default',
       ...props
     }: HeaderProps,
@@ -67,7 +67,7 @@ const Header = factory<HeaderFactory>(
         className={clsx(
           'nhsuk-header',
           {
-            'nhsuk-header--organisation': variant === 'organisation',
+            'nhsuk-header--organisation': modifier === 'organisation',
             'nhsuk-header--white': colour === 'white',
           },
           className,
@@ -119,7 +119,7 @@ const HeaderService = ({
 export type HeaderServiceLogoProps = Omit<BaseProps, 'children'> &
   (
     | {
-        variant: 'logo-only';
+        modifier: 'logo-only';
         /**
          * If `true`, the logo will not be wrapped with a link or link-type component.
          */
@@ -130,7 +130,7 @@ export type HeaderServiceLogoProps = Omit<BaseProps, 'children'> &
         organisationDescriptor?: undefined;
       }
     | {
-        variant?: 'default';
+        modifier?: 'default';
         unlinked?: undefined;
         serviceName: string;
         organisationName?: undefined;
@@ -138,7 +138,7 @@ export type HeaderServiceLogoProps = Omit<BaseProps, 'children'> &
         organisationDescriptor?: undefined;
       }
     | {
-        variant?: 'default';
+        modifier?: 'default';
         unlinked?: undefined;
         serviceName?: undefined;
         organisationName: string;
@@ -256,13 +256,13 @@ const HeaderServiceNameLink = polymorphicFactory<HeaderServiceNameLinkFactory>(
 );
 
 export type HeaderNavProps = {
-  variant?: 'default' | 'justified';
+  modifier?: 'default' | 'justified';
   colour?: 'default' | 'white';
 } & ElementProps<'div', 'color'>;
 
 const HeaderNav = ({
   children,
-  variant = 'default',
+  modifier = 'default',
   colour = 'default',
   className,
   ...props
@@ -272,7 +272,7 @@ const HeaderNav = ({
       className={clsx(
         'nhsuk-header__navigation',
         {
-          'nhsuk-header__navigation--justified': variant === 'justified',
+          'nhsuk-header__navigation--justified': modifier === 'justified',
           'nhsuk-header__navigation--white': colour === 'white',
         },
         className,
@@ -430,7 +430,7 @@ const HeaderAccountItem = factory<HeaderAccountItemFactory>(
 );
 
 export type HeaderAccountItemLinkProps = {
-  variant?: 'default' | 'icon';
+  modifier?: 'default' | 'icon';
 } & BaseProps;
 
 type HeaderAccountItemLinkFactory = PolymorphicFactory<{
@@ -443,7 +443,7 @@ const HeaderAccountItemLink = polymorphicFactory<HeaderAccountItemLinkFactory>(
   (
     {
       className,
-      variant = 'default',
+      modifier = 'default',
       as: component = 'a',
       children,
       ...props
@@ -458,7 +458,7 @@ const HeaderAccountItemLink = polymorphicFactory<HeaderAccountItemLinkFactory>(
           {...props}
           ref={ref}
         >
-          {variant === 'icon' && <UserIcon />}
+          {modifier === 'icon' && <UserIcon />}
           {children}
         </Base>
       </HeaderAccountItem>

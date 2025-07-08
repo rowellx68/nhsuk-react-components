@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 import type { CardVariant } from './Card';
 
 export type CardContextValue = {
-  variant?: CardVariant;
+  modifier?: CardVariant;
   clickable?: boolean;
 };
 

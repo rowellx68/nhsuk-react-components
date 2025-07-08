@@ -22,7 +22,7 @@ const meta: Meta<typeof Button> = {
         },
       },
     },
-    variant: {
+    modifier: {
       control: {
         type: 'select',
       },
@@ -93,7 +93,7 @@ export const DefaultDisabled: Story = {
 export const Login: Story = {
   args: {
     children: 'Continue',
-    variant: 'login',
+    modifier: 'login',
   },
   render: (args) => <Button {...args} />,
 };
@@ -101,7 +101,7 @@ export const Login: Story = {
 export const LoginAsLink: Story = {
   args: {
     children: 'Continue',
-    variant: 'login',
+    modifier: 'login',
     as: 'a',
     href: '#',
   },
@@ -111,7 +111,7 @@ export const LoginAsLink: Story = {
 export const LoginDisabled: Story = {
   args: {
     children: 'Continue',
-    variant: 'login',
+    modifier: 'login',
     disabled: true,
   },
   render: (args) => <Button {...args} />,
@@ -120,7 +120,7 @@ export const LoginDisabled: Story = {
 export const Reverse: Story = {
   args: {
     children: 'Log out',
-    variant: 'reverse',
+    modifier: 'reverse',
   },
   globals: {
     backgrounds: {
@@ -133,7 +133,7 @@ export const Reverse: Story = {
 export const ReverseAsLink: Story = {
   args: {
     children: 'Log out',
-    variant: 'reverse',
+    modifier: 'reverse',
     as: 'a',
     href: '#',
   },
@@ -148,7 +148,7 @@ export const ReverseAsLink: Story = {
 export const ReverseDisabled: Story = {
   args: {
     children: 'Log out',
-    variant: 'reverse',
+    modifier: 'reverse',
     disabled: true,
   },
   globals: {
@@ -162,7 +162,7 @@ export const ReverseDisabled: Story = {
 export const Secondary: Story = {
   args: {
     children: 'Find my location',
-    variant: 'secondary',
+    modifier: 'secondary',
   },
   render: (args) => <Button {...args} />,
 };
@@ -170,7 +170,7 @@ export const Secondary: Story = {
 export const SecondaryAsLink: Story = {
   args: {
     children: 'Find my location',
-    variant: 'secondary',
+    modifier: 'secondary',
     as: 'a',
     href: '#',
   },
@@ -180,7 +180,7 @@ export const SecondaryAsLink: Story = {
 export const SecondaryDisabled: Story = {
   args: {
     children: 'Find my location',
-    variant: 'secondary',
+    modifier: 'secondary',
     disabled: true,
   },
   render: (args) => <Button {...args} />,
@@ -189,7 +189,7 @@ export const SecondaryDisabled: Story = {
 export const SecondarySolid: Story = {
   args: {
     children: 'Find my location',
-    variant: 'secondary-solid',
+    modifier: 'secondary-solid',
   },
   render: (args) => <Button {...args} />,
 };
@@ -197,7 +197,7 @@ export const SecondarySolid: Story = {
 export const SecondarySolidAsLink: Story = {
   args: {
     children: 'Find my location',
-    variant: 'secondary-solid',
+    modifier: 'secondary-solid',
     as: 'a',
     href: '#',
   },
@@ -207,7 +207,7 @@ export const SecondarySolidAsLink: Story = {
 export const SecondarySolidDisabled: Story = {
   args: {
     children: 'Find my location',
-    variant: 'secondary-solid',
+    modifier: 'secondary-solid',
     disabled: true,
   },
   render: (args) => <Button {...args} />,
@@ -216,7 +216,7 @@ export const SecondarySolidDisabled: Story = {
 export const Warning: Story = {
   args: {
     children: 'Yes, delete this vaccine',
-    variant: 'warning',
+    modifier: 'warning',
   },
   render: (args) => <Button {...args} />,
 };
@@ -224,7 +224,7 @@ export const Warning: Story = {
 export const WarningAsLink: Story = {
   args: {
     children: 'Yes, delete this vaccine',
-    variant: 'warning',
+    modifier: 'warning',
     as: 'a',
     href: '#',
   },
@@ -234,7 +234,7 @@ export const WarningAsLink: Story = {
 export const WarningDisabled: Story = {
   args: {
     children: 'Yes, delete this vaccine',
-    variant: 'warning',
+    modifier: 'warning',
     disabled: true,
   },
   render: (args) => <Button {...args} />,

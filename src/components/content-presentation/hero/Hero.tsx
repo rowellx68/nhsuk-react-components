@@ -13,15 +13,15 @@ import { Paragraph } from '@/components/typography/paragraph/Paragraph';
 
 export type HeroProps = (
   | {
-      variant?: undefined;
+      modifier?: undefined;
       imageUrl?: undefined;
     }
   | {
-      variant?: 'image-only' | 'image-and-content';
+      modifier?: 'image-only' | 'image-and-content';
       imageUrl: string;
     }
   | {
-      variant?: 'content-only';
+      modifier?: 'content-only';
       imageUrl?: undefined;
     }
 ) &
@@ -39,10 +39,10 @@ type HeroFactory = Factory<{
 
 const Hero = factory<HeroFactory>(
   (
-    { className, children, imageUrl, variant = 'content-only', ...props },
+    { className, children, imageUrl, modifier = 'content-only', ...props },
     ref,
   ) => {
-    const hasImage = variant?.includes('image-') && imageUrl;
+    const hasImage = modifier?.includes('image-') && imageUrl;
 
     return (
       <section
@@ -51,7 +51,7 @@ const Hero = factory<HeroFactory>(
           {
             'nhsuk-hero--image': hasImage,
             'nhsuk-hero--image-description':
-              variant === 'image-and-content' && imageUrl,
+              modifier === 'image-and-content' && imageUrl,
           },
           className,
         )}
@@ -59,7 +59,7 @@ const Hero = factory<HeroFactory>(
         style={hasImage ? { backgroundImage: `url('${imageUrl}')` } : {}}
         ref={ref}
       >
-        {variant === 'image-only' ? (
+        {modifier === 'image-only' ? (
           <div className="nhsuk-hero__overlay" />
         ) : (
           children
@@ -70,18 +70,18 @@ const Hero = factory<HeroFactory>(
 );
 
 export type HeroContainerProps = {
-  variant?: 'overlay' | 'full';
-} & Omit<ContainerProps, 'variant'> &
+  modifier?: 'overlay' | 'full';
+} & Omit<ContainerProps, 'modifier'> &
   ElementProps<'div'>;
 
 const HeroContainer = ({
   children,
-  variant = 'full',
+  modifier = 'full',
   className,
   ...props
 }: HeroContainerProps) => {
   const baseProps =
-    variant === 'overlay'
+    modifier === 'overlay'
       ? { as: 'div', className: 'nhsuk-hero__overlay' }
       : { as: Fragment };
 
@@ -93,14 +93,14 @@ const HeroContainer = ({
             <div
               className={clsx(
                 {
-                  'nhsuk-hero__wrapper': variant !== 'overlay',
-                  'nhsuk-hero-content': variant === 'overlay',
+                  'nhsuk-hero__wrapper': modifier !== 'overlay',
+                  'nhsuk-hero-content': modifier === 'overlay',
                 },
                 className,
               )}
             >
               {children}
-              {variant === 'overlay' && (
+              {modifier === 'overlay' && (
                 <span className="nhsuk-hero__arrow" aria-hidden="true"></span>
               )}
             </div>
@@ -125,7 +125,7 @@ export type HeroParagraphProps = ElementProps<'p'>;
 
 const HeroParagraph = ({ className, ...props }: HeroParagraphProps) => (
   <Paragraph
-    variant="lead"
+    modifier="lead"
     className={clsx('nhsuk-u-margin-bottom-0', className)}
     {...props}
   />

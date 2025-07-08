@@ -33,7 +33,7 @@ export const AToZPage: Story = {
       <Header {...args}>
         <Header.Container>
           <Header.Service>
-            <Header.ServiceLogo href="#" variant="logo-only" />
+            <Header.ServiceLogo href="#" modifier="logo-only" />
           </Header.Service>
         </Header.Container>
       </Header>
@@ -53,7 +53,7 @@ export const AToZPage: Story = {
                 <AToZ.Item href="#D">D</AToZ.Item>
               </AToZ>
 
-              <Card variant="feature">
+              <Card modifier="feature">
                 <Card.Content>
                   <Card.Heading id="A">A</Card.Heading>
                   <List border>
@@ -70,7 +70,7 @@ export const AToZPage: Story = {
                 </Card.Content>
               </Card>
 
-              <Card variant="feature">
+              <Card modifier="feature">
                 <Card.Content>
                   <Card.Heading id="B">B</Card.Heading>
                   <List border>

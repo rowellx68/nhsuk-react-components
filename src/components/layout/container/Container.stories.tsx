@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    variant: undefined,
+    modifier: undefined,
   },
   render: (args) => (
     <Container {...args}>
@@ -34,7 +34,7 @@ export const Default: Story = {
 
 export const FluidWidth: Story = {
   args: {
-    variant: 'fluid',
+    modifier: 'fluid',
   },
   render: (args) => (
     <Container {...args}>

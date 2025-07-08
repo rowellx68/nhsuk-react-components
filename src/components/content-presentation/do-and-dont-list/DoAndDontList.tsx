@@ -17,7 +17,7 @@ import { CrossIcon } from '@/icons/cross/Cross';
 import { Factory, factory } from '@/internal/factory/factory';
 
 export type DoAndDontListProps = {
-  variant: 'do' | 'dont';
+  modifier: 'do' | 'dont';
 } & ElementProps<'div'>;
 
 type DoAndDontListFactory = Factory<{
@@ -31,9 +31,9 @@ type DoAndDontListFactory = Factory<{
 }>;
 
 const DoAndDontList = factory<DoAndDontListFactory>(
-  ({ variant, className, ...props }: DoAndDontListProps, ref) => {
+  ({ modifier, className, ...props }: DoAndDontListProps, ref) => {
     return (
-      <DoAndDontListContextProvider value={{ variant }}>
+      <DoAndDontListContextProvider value={{ modifier }}>
         <div
           ref={ref}
           className={clsx('nhsuk-do-dont-list', className)}
@@ -75,15 +75,15 @@ const DoAndDontListList = ({
   role = 'list',
   ...props
 }: DoAndDontListListProps) => {
-  const { variant } = useDoAndDontListContext();
+  const { modifier } = useDoAndDontListContext();
 
   return (
     <ul
       className={clsx(
         'nhsuk-list',
         {
-          'nhsuk-list--tick': variant === 'do',
-          'nhsuk-list--cross': variant === 'dont',
+          'nhsuk-list--tick': modifier === 'do',
+          'nhsuk-list--cross': modifier === 'dont',
         },
         className,
       )}
@@ -100,12 +100,12 @@ const DoAndDontListItem = ({
   children,
   ...props
 }: DoAndDontListItemProps) => {
-  const { variant } = useDoAndDontListContext();
+  const { modifier } = useDoAndDontListContext();
 
   return (
     <li className={className} {...props}>
-      {variant === 'do' && <TickIcon />}
-      {variant === 'dont' && <CrossIcon />}
+      {modifier === 'do' && <TickIcon />}
+      {modifier === 'dont' && <CrossIcon />}
       {children}
     </li>
   );

@@ -79,14 +79,14 @@ const Fieldset = ({
 export type FieldsetLegendProps = (
   | {
       size?: undefined;
-      variant?: undefined;
+      modifier?: undefined;
     }
   | {
       size: Exclude<Size, 'xl'>;
-      variant?: undefined;
+      modifier?: undefined;
     }
   | {
-      variant: 'page-heading';
+      modifier: 'page-heading';
       size?: Exclude<Size, 'xl'>;
     }
 ) &
@@ -94,7 +94,7 @@ export type FieldsetLegendProps = (
   BaseProps;
 
 const FieldsetLegend = ({
-  variant,
+  modifier,
   size,
   as: component,
   className,
@@ -102,14 +102,14 @@ const FieldsetLegend = ({
   ...props
 }: FieldsetLegendProps & AsElementProps) => {
   const _component =
-    variant === 'page-heading' || size === 'l' ? component || 'h1' : Fragment;
+    modifier === 'page-heading' || size === 'l' ? component || 'h1' : Fragment;
 
   const baseProps = {
     as: _component,
     ...(_component !== Fragment
       ? {
           className:
-            variant === 'page-heading' ? 'nhsuk-fieldset__heading' : undefined,
+            modifier === 'page-heading' ? 'nhsuk-fieldset__heading' : undefined,
         }
       : {}),
   };
@@ -119,7 +119,7 @@ const FieldsetLegend = ({
       className={clsx(
         'nhsuk-fieldset__legend',
         {
-          'nhsuk-fieldset__legend--l': variant === 'page-heading' && !size,
+          'nhsuk-fieldset__legend--l': modifier === 'page-heading' && !size,
           [`nhsuk-fieldset__legend--${size}`]: size,
         },
         className,

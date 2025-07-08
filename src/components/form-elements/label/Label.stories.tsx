@@ -17,7 +17,7 @@ const meta: Meta<typeof Label> = {
         type: 'text',
       },
     },
-    variant: {
+    modifier: {
       control: {
         type: 'select',
       },

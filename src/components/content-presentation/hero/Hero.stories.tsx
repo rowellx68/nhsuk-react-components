@@ -9,7 +9,7 @@ const meta: Meta<typeof Hero> = {
     layout: 'fullscreen',
   },
   argTypes: {
-    variant: {
+    modifier: {
       control: {
         type: 'select',
       },
@@ -47,13 +47,13 @@ export const WithContentOnly: Story = {
 
 export const WithImageContent: Story = {
   args: {
-    variant: 'image-and-content',
+    modifier: 'image-and-content',
     imageUrl:
       'https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg',
   },
   render: (args) => (
     <Hero {...args}>
-      <Hero.Container variant="overlay">
+      <Hero.Container modifier="overlay">
         <Hero.Heading>We're here for you</Hero.Heading>
         <Hero.Paragraph>
           Helping you take control of your health and wellbeing.
@@ -65,7 +65,7 @@ export const WithImageContent: Story = {
 
 export const WithImageOnly: Story = {
   args: {
-    variant: 'image-only',
+    modifier: 'image-only',
     imageUrl:
       'https://assets.nhs.uk/prod/images/S_0818_homepage_hero_1_F0147446.width-1000.jpg',
   },

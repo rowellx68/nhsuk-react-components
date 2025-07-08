@@ -15,13 +15,13 @@ export type TagColour =
   | 'yellow';
 
 export type TagProps = {
-  variant?: TagColour;
+  modifier?: TagColour;
 } & ElementProps<'strong'>;
 
-const Tag = ({ variant = 'grey', className, ...props }: TagProps) => {
+const Tag = ({ modifier = 'grey', className, ...props }: TagProps) => {
   return (
     <strong
-      className={clsx('nhsuk-tag', `nhsuk-tag--${variant}`, className)}
+      className={clsx('nhsuk-tag', `nhsuk-tag--${modifier}`, className)}
       {...props}
     />
   );

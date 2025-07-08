@@ -14,7 +14,7 @@ import {
 
 export type HeadingProps = {
   size?: Size;
-  variant?: 'caption-bottom';
+  modifier?: 'caption-bottom';
 } & BaseProps &
   AsElementProps<HeadingLevel> &
   ElementProps<'h1'>;
@@ -27,7 +27,7 @@ type HeadingFactory = PolymorphicFactory<{
 
 const Heading = polymorphicFactory<HeadingFactory>(
   (
-    { className, size, variant, as: component = 'h1', ...props }: HeadingProps,
+    { className, size, modifier, as: component = 'h1', ...props }: HeadingProps,
     ref,
   ) => {
     return (
@@ -37,7 +37,7 @@ const Heading = polymorphicFactory<HeadingFactory>(
           clsx(
             {
               [`nhsuk-heading-${size}`]: size,
-              'nhsuk-caption--bottom': variant,
+              'nhsuk-caption--bottom': modifier,
             },
             className,
           ) || undefined

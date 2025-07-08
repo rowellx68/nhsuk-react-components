@@ -8,10 +8,10 @@ import {
 } from '@/components/content-presentation/details/Details';
 import { ElementProps } from '@/types/shared';
 
-export type ExpanderProps = Omit<DetailsProps, 'expander' | 'variant'>;
+export type ExpanderProps = Omit<DetailsProps, 'expander' | 'modifier'>;
 
 const Expander = ({ ...props }: ExpanderProps) => {
-  return <Details {...props} variant="expander" />;
+  return <Details {...props} modifier="expander" />;
 };
 
 export type ExpanderSummaryProps = DetailsSummaryProps;

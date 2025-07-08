@@ -39,7 +39,7 @@ export const Default: Story = {
     <Header {...args}>
       <Header.Container>
         <Header.Service>
-          <Header.ServiceLogo variant="logo-only" href="#" />
+          <Header.ServiceLogo modifier="logo-only" href="#" />
         </Header.Service>
         <Header.Search
           inputProps={{ visuallyHiddenText: 'Search the NHS website' }}
@@ -71,7 +71,7 @@ export const ServiceWhiteWithAccountLoggedIn: Story = {
           <Header.ServiceLogo href="#" serviceName="Manage patients" />
         </Header.Service>
         <Header.Account>
-          <Header.AccountItemLink href="#" variant="icon">
+          <Header.AccountItemLink href="#" modifier="icon">
             florence.nightingale@nhs.net
           </Header.AccountItemLink>
           <Header.AccountItemForm action="#" method="post">
@@ -109,10 +109,10 @@ export const DefaultWhiteNavigationJustified: Story = {
     <Header {...args}>
       <Header.Container>
         <Header.Service>
-          <Header.ServiceLogo variant="logo-only" href="#" />
+          <Header.ServiceLogo modifier="logo-only" href="#" />
         </Header.Service>
       </Header.Container>
-      <Header.Nav variant="justified">
+      <Header.Nav modifier="justified">
         <Header.NavList>
           <Header.NavItem href="#">Health A to Z</Header.NavItem>
           <Header.NavItem href="#">Live Well</Header.NavItem>
@@ -128,7 +128,7 @@ export const DefaultWhiteNavigationJustified: Story = {
 
 export const OrganisationalWhiteWithSearch: Story = {
   args: {
-    variant: 'organisation',
+    modifier: 'organisation',
     colour: 'white',
   },
   render: (args) => (
@@ -153,7 +153,7 @@ export const OrganisationalWhiteWithSearch: Story = {
 
 export const OrganisationalWhiteWithSearchNavigation: Story = {
   args: {
-    variant: 'organisation',
+    modifier: 'organisation',
     colour: 'white',
   },
   render: (args) => (
@@ -196,7 +196,7 @@ export const OrganisationalWhiteWithSearchNavigationCustomLogo: Story = {
       <Header.Container>
         <Header.Service>
           <Header.ServiceLogo
-            variant="logo-only"
+            modifier="logo-only"
             logo={{
               src: 'https://nhsuk.github.io/nhsuk-frontend/assets/example-logo.svg',
               width: 280,
@@ -227,7 +227,7 @@ export const OrganisationalWhiteWithSearchNavigationCustomLogo: Story = {
 
 export const OrganisationalWhiteWithSearchNavigationWhite: Story = {
   args: {
-    variant: 'organisation',
+    modifier: 'organisation',
     colour: 'white',
   },
   render: (args) => (
@@ -288,7 +288,7 @@ export const ServiceWhiteSeparateWithSearch: Story = {
     <Header {...args}>
       <Header.Container>
         <Header.Service>
-          <Header.ServiceLogo href="#nhs" variant="logo-only" />
+          <Header.ServiceLogo href="#nhs" modifier="logo-only" />
           <Header.ServiceNameLink href="#">
             Find your NHS number
           </Header.ServiceNameLink>
@@ -310,7 +310,7 @@ export const ServiceWhiteSeparateUnlinkedWithSearch: Story = {
     <Header {...args}>
       <Header.Container>
         <Header.Service>
-          <Header.ServiceLogo href="#nhs" variant="logo-only" unlinked />
+          <Header.ServiceLogo href="#nhs" modifier="logo-only" unlinked />
           <Header.ServiceNameLink href="#">
             Find your NHS number
           </Header.ServiceNameLink>
@@ -326,7 +326,7 @@ export const ServiceWhiteSeparateUnlinkedWithSearch: Story = {
 
 export const OrganisationalWithSearch: Story = {
   args: {
-    variant: 'organisation',
+    modifier: 'organisation',
   },
   render: (args) => (
     <Header {...args}>
@@ -350,7 +350,7 @@ export const OrganisationalWithSearch: Story = {
 
 export const OrganisationalWithSearchNavigation: Story = {
   args: {
-    variant: 'organisation',
+    modifier: 'organisation',
   },
   render: (args) => (
     <Header {...args}>
@@ -427,7 +427,7 @@ export const SearchBar: Story = {
     <Header {...args}>
       <Header.Container>
         <Header.Service>
-          <Header.ServiceLogo variant="logo-only" href="#" />
+          <Header.ServiceLogo modifier="logo-only" href="#" />
         </Header.Service>
         <Header.Search
           inputProps={{ visuallyHiddenText: 'Search the NHS website' }}
@@ -443,7 +443,7 @@ export const Navigation: Story = {
     <Header {...args}>
       <Header.Container>
         <Header.Service>
-          <Header.ServiceLogo variant="logo-only" href="#" />
+          <Header.ServiceLogo modifier="logo-only" href="#" />
         </Header.Service>
       </Header.Container>
       <Header.Nav>
@@ -470,7 +470,7 @@ export const AccountInformationAndLinks: Story = {
         </Header.Service>
         <Header.Account>
           <Header.AccountItem>
-            <Header.AccountItemLink href="#" variant="icon">
+            <Header.AccountItemLink href="#" modifier="icon">
               Florence Nightingale
             </Header.AccountItemLink>
           </Header.AccountItem>
@@ -494,7 +494,7 @@ export const ComplexAccountInformationAndLinks: Story = {
         </Header.Service>
         <Header.Account>
           <Header.AccountItem>
-            <Header.AccountItemLink href="#" variant="icon">
+            <Header.AccountItemLink href="#" modifier="icon">
               Florence Nightingale (Regional Manager)
             </Header.AccountItemLink>
           </Header.AccountItem>
@@ -523,7 +523,7 @@ export const ComplexAccountInformationAndLinks: Story = {
 
 export const BlueOrganisationHeader: Story = {
   args: {
-    variant: 'organisation',
+    modifier: 'organisation',
     colour: 'default',
   },
   render: (args) => (
@@ -559,7 +559,7 @@ export const BlueOrganisationHeader: Story = {
 
 export const WhiteOrganisationHeader: Story = {
   args: {
-    variant: 'organisation',
+    modifier: 'organisation',
     colour: 'white',
   },
   render: (args) => (
@@ -595,7 +595,7 @@ export const WhiteOrganisationHeader: Story = {
 
 export const WhiteOrganisationHeaderBlueNavigation: Story = {
   args: {
-    variant: 'organisation',
+    modifier: 'organisation',
     colour: 'white',
   },
   render: (args) => (

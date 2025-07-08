@@ -22,19 +22,19 @@ export type TextareaProps = BaseFormElementProps &
   ElementProps<'textarea'> &
   (
     | {
-        variant: 'character-count';
+        modifier: 'character-count';
         maxWords?: undefined;
         maxCharacterLength: number;
         threshold?: number;
       }
     | {
-        variant: 'word-count';
+        modifier: 'word-count';
         maxWords: number;
         maxCharacterLength?: undefined;
         threshold?: number;
       }
     | {
-        variant?: 'textarea';
+        modifier?: 'textarea';
         maxWords?: undefined;
         maxCharacterLength?: undefined;
         threshold?: undefined;
@@ -49,7 +49,7 @@ type TextareaFactory = Factory<{
 const Textarea = factory<TextareaFactory>(
   (
     {
-      variant = 'textarea',
+      modifier = 'textarea',
       rows = 5,
       threshold,
       maxCharacterLength,
@@ -61,32 +61,32 @@ const Textarea = factory<TextareaFactory>(
     useImperativeHandle(ref, () => internalRef.current as HTMLTextAreaElement);
     const internalRef = useRef<HTMLTextAreaElement>(null);
 
-    const characterCount = variant !== 'textarea';
+    const characterCount = modifier !== 'textarea';
     const baseProps = {
       as: characterCount ? 'div' : Fragment,
       ...(characterCount
         ? {
             className: 'nhsuk-character-count',
             'data-module': 'nhsuk-character-count',
-            'data-maxwords': variant === 'word-count' ? maxWords : undefined,
+            'data-maxwords': modifier === 'word-count' ? maxWords : undefined,
             'data-maxlength':
-              variant === 'character-count' ? maxCharacterLength : undefined,
+              modifier === 'character-count' ? maxCharacterLength : undefined,
             'data-threshold': threshold,
           }
         : {}),
     };
 
     const message = useMemo(() => {
-      if (variant === 'character-count') {
+      if (modifier === 'character-count') {
         return `You have ${maxCharacterLength} characters remaining`;
       }
 
-      if (variant === 'word-count') {
+      if (modifier === 'word-count') {
         return `You have ${maxWords} words remaining`;
       }
 
       return undefined;
-    }, [variant, maxWords, maxCharacterLength]);
+    }, [modifier, maxWords, maxCharacterLength]);
 
     useEffect(() => {
       if (!characterCount) {

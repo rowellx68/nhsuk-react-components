@@ -50,7 +50,7 @@ export const AppHeader = () => (
   <Header>
     <HeaderContainer>
       <HeaderService>
-        <HeaderServiceLogo as={Link} href="/" variant="logo-only" />
+        <HeaderServiceLogo as={Link} href="/" modifier="logo-only" />
       </HeaderService>
     </HeaderContainer>
   </Header>

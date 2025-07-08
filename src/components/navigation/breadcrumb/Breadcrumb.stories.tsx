@@ -42,7 +42,7 @@ export const Default: Story = {
 
 export const Reverse: Story = {
   args: {
-    variant: 'reverse',
+    modifier: 'reverse',
   },
   globals: {
     backgrounds: {

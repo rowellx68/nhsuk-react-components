@@ -24,7 +24,7 @@ type Story = StoryObj<typeof DoAndDontList>;
 
 export const DoList: Story = {
   args: {
-    variant: 'do',
+    modifier: 'do',
   },
   render: (args) => (
     <DoAndDontList {...args}>
@@ -48,7 +48,7 @@ export const DoList: Story = {
 
 export const DontList: Story = {
   args: {
-    variant: 'dont',
+    modifier: 'dont',
   },
   render: (args) => (
     <DoAndDontList {...args}>

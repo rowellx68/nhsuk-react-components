@@ -14,7 +14,7 @@ import {
 import { Factory, factory } from '@/internal/factory/factory';
 
 export type BreadcrumbProps = {
-  variant?: 'default' | 'reverse';
+  modifier?: 'default' | 'reverse';
 } & ElementProps<'nav'>;
 
 type BreadcrumbFactory = Factory<{
@@ -29,14 +29,14 @@ type BreadcrumbFactory = Factory<{
 
 const Breadcrumb = factory<BreadcrumbFactory>(
   (
-    { children, className, variant = 'default', ...props }: BreadcrumbProps,
+    { children, className, modifier = 'default', ...props }: BreadcrumbProps,
     ref,
   ) => {
     return (
       <nav
         className={clsx(
           'nhsuk-breadcrumb',
-          { 'nhsuk-breadcrumb--reverse': variant === 'reverse' },
+          { 'nhsuk-breadcrumb--reverse': modifier === 'reverse' },
           className,
         )}
         aria-label="Breadcrumb"
@@ -64,7 +64,7 @@ const BreadcrumbList = ({
 };
 
 export type BreadcrumbListItemProps = BaseProps & {
-  variant?: 'default' | 'reverse';
+  modifier?: 'default' | 'reverse';
 };
 
 type BaseCrumbListItemFactory = PolymorphicFactory<{
@@ -78,7 +78,7 @@ const BreadcrumbListItem = polymorphicFactory<BaseCrumbListItemFactory>(
     {
       className,
       as: component = 'a',
-      variant = 'default',
+      modifier = 'default',
       ...props
     }: BreadcrumbListItemProps & AsElementProps,
     ref,
@@ -89,7 +89,7 @@ const BreadcrumbListItem = polymorphicFactory<BaseCrumbListItemFactory>(
           as={component}
           className={clsx(
             'nhsuk-breadcrumb__link',
-            { 'nhsuk-breadcrumb--reverse': variant === 'reverse' },
+            { 'nhsuk-breadcrumb--reverse': modifier === 'reverse' },
             className,
           )}
           {...props}

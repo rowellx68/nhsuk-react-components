@@ -28,7 +28,7 @@ export const MiniHub: Story = {
       <Header {...args}>
         <Header.Container>
           <Header.Service>
-            <Header.ServiceLogo href="#" variant="logo-only" />
+            <Header.ServiceLogo href="#" modifier="logo-only" />
           </Header.Service>
         </Header.Container>
       </Header>

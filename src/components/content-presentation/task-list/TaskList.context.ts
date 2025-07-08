@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
 export type TaskListItemContextValue = {
-  variant?: 'with-link';
+  modifier?: 'with-link';
   rowId?: string;
 };
 

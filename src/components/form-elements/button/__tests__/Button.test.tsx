@@ -24,12 +24,12 @@ it.each([
   'warning',
   'login',
 ] as const)(
-  'should render the Button component with the %s variant',
-  (variant) => {
-    const { container } = render(<Button variant={variant}>Action</Button>);
+  'should render the Button component with the %s modifier',
+  (modifier) => {
+    const { container } = render(<Button modifier={modifier}>Action</Button>);
 
     expect(
-      container.querySelector('.nhsuk-button--' + variant),
+      container.querySelector('.nhsuk-button--' + modifier),
     ).toBeInTheDocument();
   },
 );
@@ -51,10 +51,10 @@ it('should render the Button component as a link', () => {
 });
 
 it.each(['secondary', 'reverse', 'warning'] as const)(
-  'should render the Button component as a link variant %s',
-  (variant) => {
+  'should render the Button component as a link modifier %s',
+  (modifier) => {
     const { container } = render(
-      <ButtonAsLink as="a" href="https://www.nhs.uk" variant={variant}>
+      <ButtonAsLink as="a" href="https://www.nhs.uk" modifier={modifier}>
         Link
       </ButtonAsLink>,
     );
@@ -62,7 +62,7 @@ it.each(['secondary', 'reverse', 'warning'] as const)(
     expect(container.querySelector('a')).toBeInTheDocument();
     expect(container).toMatchSnapshot();
     expect(
-      container.querySelector('.nhsuk-button--' + variant),
+      container.querySelector('.nhsuk-button--' + modifier),
     ).toBeInTheDocument();
   },
 );

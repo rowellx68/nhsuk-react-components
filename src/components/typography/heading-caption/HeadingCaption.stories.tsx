@@ -60,7 +60,7 @@ export const WithHeadingCaptionBottom: Story = {
   },
   render: ({ size, ...args }) => (
     <>
-      <Heading variant="caption-bottom" size={size}>
+      <Heading modifier="caption-bottom" size={size}>
         nhsuk-heading-{size}
       </Heading>
       <HeadingCaption size={size} {...args}>

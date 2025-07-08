@@ -23,9 +23,9 @@ import { Base } from '@/internal/base/Base';
 
 export type TableProps = {
   /**
-   * The variant of the table. Defaults to a non-responsive table.
+   * The modifier of the table. Defaults to a non-responsive table.
    */
-  variant?: 'default' | 'responsive';
+  modifier?: 'default' | 'responsive';
   /**
    * Whether the first cell in the table is a header cell. Defaults to false.
    * @default false
@@ -46,17 +46,17 @@ type TableFactory = Factory<{
 }>;
 
 const Table = factory<TableFactory>(
-  ({ variant, className, firstCellIsHeader = false, ...props }, ref) => {
+  ({ modifier, className, firstCellIsHeader = false, ...props }, ref) => {
     const [responsiveHeadings, registerHeadings] = useState<ReactNode[]>([]);
 
     const value = useMemo(
       () => ({
-        variant,
+        modifier,
         responsiveHeadings,
         firstCellIsHeader,
         registerHeadings,
       }),
-      [variant, responsiveHeadings, registerHeadings],
+      [modifier, responsiveHeadings, registerHeadings],
     );
 
     return (
@@ -64,8 +64,8 @@ const Table = factory<TableFactory>(
         <table
           className={clsx(
             {
-              'nhsuk-table': !variant,
-              [`nhsuk-table-${variant}`]: variant,
+              'nhsuk-table': !modifier,
+              [`nhsuk-table-${modifier}`]: modifier,
             },
             className,
           )}
@@ -114,7 +114,7 @@ const TableRow = ({
   ...props
 }: TableRowProps) => {
   const {
-    variant: tableVariant,
+    modifier: tableVariant,
     responsiveHeadings,
     firstCellIsHeader,
     registerHeadings,
@@ -185,9 +185,9 @@ const TableRow = ({
 
 export type TableCellProps = {
   /**
-   * The variant of the cell. Defaults to none.
+   * The modifier of the cell. Defaults to none.
    */
-  variant?: 'default' | 'numeric';
+  modifier?: 'default' | 'numeric';
   /**
    * The heading to display in when the table is in responsive mode and on small screens. If not provided, the children will be used.
    */
@@ -204,7 +204,7 @@ export type TableCellProps = {
 } & ElementProps<'td'>;
 
 const TableCell = ({
-  variant,
+  modifier,
   role,
   className,
   children,
@@ -213,13 +213,13 @@ const TableCell = ({
   __firstCellIsHeader,
   ...props
 }: TableCellProps) => {
-  const { variant: tableVariant } = useTableContext();
+  const { modifier: tableVariant } = useTableContext();
   const { head } = useTableHeadContext();
 
   const headerCellClassNames = clsx(
     {
       'nhsuk-table__header': __firstCellIsHeader,
-      'nhsuk-table__header--numeric': variant === 'numeric',
+      'nhsuk-table__header--numeric': modifier === 'numeric',
     },
     className,
   );
@@ -227,7 +227,7 @@ const TableCell = ({
   const cellClassNames = clsx(
     'nhsuk-table__cell',
     {
-      'nhsuk-table__cell--numeric': variant === 'numeric',
+      'nhsuk-table__cell--numeric': modifier === 'numeric',
     },
     className,
   );

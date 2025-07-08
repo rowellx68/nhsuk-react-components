@@ -23,7 +23,7 @@ export const Default: Story = {
 
 export const Lead: Story = {
   args: {
-    variant: 'lead',
+    modifier: 'lead',
     children: 'nhsuk-body-l',
   },
   render: (args) => <Paragraph {...args} />,
@@ -31,7 +31,7 @@ export const Lead: Story = {
 
 export const Small: Story = {
   args: {
-    variant: 'small',
+    modifier: 'small',
     children: 'nhsuk-body-s',
   },
   render: (args) => <Paragraph {...args} />,

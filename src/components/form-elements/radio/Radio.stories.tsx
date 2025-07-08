@@ -24,7 +24,7 @@ const meta: Meta<typeof Radio> = {
   args: {
     labelProps: {
       size: 'l',
-      variant: 'page-heading',
+      modifier: 'page-heading',
     },
   },
   decorators: [
@@ -45,7 +45,7 @@ export const Default: Story = {
     label: 'Are you 18 or over?',
     labelProps: {
       size: 'l',
-      variant: 'page-heading',
+      modifier: 'page-heading',
     },
   },
   render: (args) => (

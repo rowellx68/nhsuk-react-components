@@ -1,6 +1,6 @@
 # Upgrade to v6.0
 
-This new version introduces a significant way of enabling variants for components. Instead of using `boolean` properties, you now use a `variant`. A variant could also narrow the properties you can pass to the component.
+This new version introduces a significant way of enabling modifiers for components. Instead of using `boolean` properties, you now use a `modifier`. A modifier could also narrow the properties you can pass to the component.
 
 Another change is that input elements now exposes the `ref` property which makes it easier to work with form libraries like `react-hook-form` or `@tanstack/react-form`. In a similar way, some components can now be rendered as another element type or component by using the `as` property.
 
@@ -10,7 +10,7 @@ Another change is that input elements now exposes the `ref` property which makes
 
 ### Details
 
-It's possible to just pass in the `expander` variant to the `Details` component but it is much better to use the `Expander` component instead.
+It's possible to just pass in the `expander` modifier to the `Details` component but it is much better to use the `Expander` component instead.
 
 ```tsx
 // v5
@@ -20,7 +20,7 @@ It's possible to just pass in the `expander` variant to the `Details` component 
 </Details>
 
 // v6
-<Details variant="expander">
+<Details modifier="expander">
   <Details.Summary>Summary</Details.Summary>
   <Details.Text>Text</Details.Text>
 </Details>
@@ -28,7 +28,7 @@ It's possible to just pass in the `expander` variant to the `Details` component 
 
 ### DoAndDontList
 
-The `DoAndDontList` now uses a variant and the component has been split into more sub-components. This allows you to more access to the underlying heading, list and list items.
+The `DoAndDontList` now uses a modifier and the component has been split into more sub-components. This allows you to more access to the underlying heading, list and list items.
 
 ```tsx
 // v5
@@ -42,7 +42,7 @@ The `DoAndDontList` now uses a variant and the component has been split into mor
 </DoAndDontList>
 
 // v6
-<DoAndDontList variant="do">
+<DoAndDontList modifier="do">
   <DoAndDontList.Label as="h2">Do</DoAndDontList.Label>
   <DoAndDontList.List>
     <DoAndDontList.Item>Do this</DoAndDontList.Item>

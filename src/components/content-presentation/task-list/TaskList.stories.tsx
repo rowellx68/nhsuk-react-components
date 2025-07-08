@@ -23,36 +23,36 @@ type Story = StoryObj<typeof TaskList>;
 export const Default: Story = {
   render: (args) => (
     <TaskList {...args}>
-      <TaskList.Item variant="with-link">
+      <TaskList.Item modifier="with-link">
         <TaskList.Item.NameAndHint href="#">Exercise</TaskList.Item.NameAndHint>
-        <TaskList.Item.Status variant="completed">
+        <TaskList.Item.Status modifier="completed">
           Completed
         </TaskList.Item.Status>
       </TaskList.Item>
-      <TaskList.Item variant="with-link">
+      <TaskList.Item modifier="with-link">
         <TaskList.Item.NameAndHint href="#">
           Personal health
         </TaskList.Item.NameAndHint>
-        <TaskList.Item.Status variant="completed">
+        <TaskList.Item.Status modifier="completed">
           Completed
         </TaskList.Item.Status>
       </TaskList.Item>
-      <TaskList.Item variant="with-link">
+      <TaskList.Item modifier="with-link">
         <TaskList.Item.NameAndHint
           href="#"
           hint="Details of your parents and siblings"
         >
           Family health history
         </TaskList.Item.NameAndHint>
-        <TaskList.Item.Status variant="incomplete">
+        <TaskList.Item.Status modifier="incomplete">
           Incomplete
         </TaskList.Item.Status>
       </TaskList.Item>
-      <TaskList.Item variant="with-link">
+      <TaskList.Item modifier="with-link">
         <TaskList.Item.NameAndHint href="#">
           Smoking history
         </TaskList.Item.NameAndHint>
-        <TaskList.Item.Status variant="incomplete">
+        <TaskList.Item.Status modifier="incomplete">
           Incomplete
         </TaskList.Item.Status>
       </TaskList.Item>
@@ -60,7 +60,7 @@ export const Default: Story = {
         <TaskList.Item.NameAndHint href="#">
           Blood test
         </TaskList.Item.NameAndHint>
-        <TaskList.Item.Status variant="cannot-start-yet">
+        <TaskList.Item.Status modifier="cannot-start-yet">
           Cannot start yet
         </TaskList.Item.Status>
       </TaskList.Item>
@@ -76,19 +76,19 @@ export const MultipleSections: Story = {
         Check before you start
       </Heading>
       <TaskList {...args}>
-        <TaskList.Item variant="with-link">
+        <TaskList.Item modifier="with-link">
           <TaskList.Item.NameAndHint href="#">
             Check eligibility
           </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status variant="completed">
+          <TaskList.Item.Status modifier="completed">
             Completed
           </TaskList.Item.Status>
         </TaskList.Item>
-        <TaskList.Item variant="with-link">
+        <TaskList.Item modifier="with-link">
           <TaskList.Item.NameAndHint href="#">
             Read declaration
           </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status variant="incomplete">
+          <TaskList.Item.Status modifier="incomplete">
             Incomplete
           </TaskList.Item.Status>
         </TaskList.Item>
@@ -98,38 +98,38 @@ export const MultipleSections: Story = {
         Prepare application
       </Heading>
       <TaskList {...args}>
-        <TaskList.Item variant="with-link">
+        <TaskList.Item modifier="with-link">
           <TaskList.Item.NameAndHint href="#">
             Exercise
           </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status variant="completed">
+          <TaskList.Item.Status modifier="completed">
             Completed
           </TaskList.Item.Status>
         </TaskList.Item>
-        <TaskList.Item variant="with-link">
+        <TaskList.Item modifier="with-link">
           <TaskList.Item.NameAndHint href="#">
             Personal health
           </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status variant="completed">
+          <TaskList.Item.Status modifier="completed">
             Completed
           </TaskList.Item.Status>
         </TaskList.Item>
-        <TaskList.Item variant="with-link">
+        <TaskList.Item modifier="with-link">
           <TaskList.Item.NameAndHint
             href="#"
             hint="Details of your parents and siblings"
           >
             Family health history
           </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status variant="incomplete">
+          <TaskList.Item.Status modifier="incomplete">
             Incomplete
           </TaskList.Item.Status>
         </TaskList.Item>
-        <TaskList.Item variant="with-link">
+        <TaskList.Item modifier="with-link">
           <TaskList.Item.NameAndHint href="#">
             Smoking history
           </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status variant="incomplete">
+          <TaskList.Item.Status modifier="incomplete">
             Incomplete
           </TaskList.Item.Status>
         </TaskList.Item>
@@ -137,7 +137,7 @@ export const MultipleSections: Story = {
           <TaskList.Item.NameAndHint href="#">
             Blood test
           </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status variant="cannot-start-yet">
+          <TaskList.Item.Status modifier="cannot-start-yet">
             Cannot start yet
           </TaskList.Item.Status>
         </TaskList.Item>

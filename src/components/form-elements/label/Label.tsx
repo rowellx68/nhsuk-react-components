@@ -6,22 +6,22 @@ import { Base } from '@/internal/base/Base';
 export type LabelProps = (
   | {
       size?: undefined;
-      variant?: undefined;
+      modifier?: undefined;
     }
   | {
       size: Exclude<Size, 'xl'>;
-      variant?: undefined;
+      modifier?: undefined;
     }
   | {
-      variant: 'page-heading';
+      modifier: 'page-heading';
       size: Exclude<Size, 'xl'>;
     }
 ) &
   ElementProps<'label', 'size' | 'as'>;
 
-const Label = ({ className, size, variant, ...props }: LabelProps) => {
+const Label = ({ className, size, modifier, ...props }: LabelProps) => {
   const component =
-    variant === 'page-heading' || size === 'l' ? 'h1' : Fragment;
+    modifier === 'page-heading' || size === 'l' ? 'h1' : Fragment;
 
   const baseProps =
     component === 'h1' ? { className: 'nhsuk-label-wrapper' } : {};
@@ -32,7 +32,7 @@ const Label = ({ className, size, variant, ...props }: LabelProps) => {
         className={clsx(
           'nhsuk-label',
           {
-            'nhsuk-label--l': variant === 'page-heading' && !size,
+            'nhsuk-label--l': modifier === 'page-heading' && !size,
             [`nhsuk-label--${size}`]: size,
           },
           className,

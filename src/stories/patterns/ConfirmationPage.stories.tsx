@@ -33,7 +33,7 @@ export const ConfirmationPage: Story = {
       <Header {...args}>
         <Header.Container>
           <Header.Service>
-            <Header.ServiceLogo href="#" variant="logo-only" />
+            <Header.ServiceLogo href="#" modifier="logo-only" />
           </Header.Service>
         </Header.Container>
       </Header>
@@ -50,7 +50,7 @@ export const ConfirmationPage: Story = {
               </Panel>
 
               <Heading as="h2">Your appointment details</Heading>
-              <SummaryList variant="no-border">
+              <SummaryList modifier="no-border">
                 <SummaryList.Row>
                   <SummaryList.Key>Site location</SummaryList.Key>
                   <SummaryList.Value>

@@ -7,7 +7,7 @@ import { TagColour } from '../Tag';
 
 const Default = composeStory(DefaultStory, meta);
 
-it('should render the Tag component with the default grey variant', () => {
+it('should render the Tag component with the default grey modifier', () => {
   const { container } = render(<Default />);
   expect(container.querySelector('.nhsuk-tag--grey')).toBeInTheDocument();
 });
@@ -24,11 +24,11 @@ it.each([
   'white',
   'yellow',
 ] as TagColour[])(
-  'should render the Tag component with the %s variant',
-  (variant) => {
-    const { container } = render(<Default variant={variant} />);
+  'should render the Tag component with the %s modifier',
+  (modifier) => {
+    const { container } = render(<Default modifier={modifier} />);
     expect(
-      container.querySelector(`.nhsuk-tag--${variant}`),
+      container.querySelector(`.nhsuk-tag--${modifier}`),
     ).toBeInTheDocument();
     expect(container.querySelector('.custom-class')).toBeInTheDocument();
   },

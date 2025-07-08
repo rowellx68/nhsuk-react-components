@@ -10,7 +10,7 @@ import meta, {
 const DoList = composeStory(DoListStory, meta);
 const DontList = composeStory(DontListStory, meta);
 
-it('should render the do variant of the DoDontList component', () => {
+it('should render the do modifier of the DoDontList component', () => {
   const { getByRole, container } = render(<DoList />);
 
   expect(getByRole('list')).toHaveClass('nhsuk-list nhsuk-list--tick');
@@ -18,7 +18,7 @@ it('should render the do variant of the DoDontList component', () => {
   expect(container).toMatchSnapshot();
 });
 
-it('should render the dont variant of the DoDontList component', () => {
+it('should render the dont modifier of the DoDontList component', () => {
   const { getByRole, container } = render(<DontList />);
 
   expect(getByRole('list')).toHaveClass('nhsuk-list nhsuk-list--cross');

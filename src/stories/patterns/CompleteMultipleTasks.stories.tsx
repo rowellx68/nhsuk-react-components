@@ -31,7 +31,7 @@ export const CompleteMultipleTasks: Story = {
       <Header {...args}>
         <Header.Container>
           <Header.Service>
-            <Header.ServiceLogo href="#" variant="logo-only" />
+            <Header.ServiceLogo href="#" modifier="logo-only" />
           </Header.Service>
         </Header.Container>
       </Header>
@@ -46,19 +46,19 @@ export const CompleteMultipleTasks: Story = {
                 Your details
               </Heading>
               <TaskList>
-                <TaskList.Item variant="with-link">
+                <TaskList.Item modifier="with-link">
                   <TaskList.Item.NameAndHint as="a" href="#">
                     Name
                   </TaskList.Item.NameAndHint>
-                  <TaskList.Item.Status variant="completed">
+                  <TaskList.Item.Status modifier="completed">
                     Completed
                   </TaskList.Item.Status>
                 </TaskList.Item>
-                <TaskList.Item variant="with-link">
+                <TaskList.Item modifier="with-link">
                   <TaskList.Item.NameAndHint as="a" href="#">
                     Contact details
                   </TaskList.Item.NameAndHint>
-                  <TaskList.Item.Status variant="incomplete">
+                  <TaskList.Item.Status modifier="incomplete">
                     Incomplete
                   </TaskList.Item.Status>
                 </TaskList.Item>
@@ -68,43 +68,43 @@ export const CompleteMultipleTasks: Story = {
                 Your health
               </Heading>
               <TaskList>
-                <TaskList.Item variant="with-link">
+                <TaskList.Item modifier="with-link">
                   <TaskList.Item.NameAndHint as="a" href="#">
                     Physical activity
                   </TaskList.Item.NameAndHint>
-                  <TaskList.Item.Status variant="completed">
+                  <TaskList.Item.Status modifier="completed">
                     Completed
                   </TaskList.Item.Status>
                 </TaskList.Item>
-                <TaskList.Item variant="with-link">
+                <TaskList.Item modifier="with-link">
                   <TaskList.Item.NameAndHint as="a" href="#">
                     Smoking history
                   </TaskList.Item.NameAndHint>
-                  <TaskList.Item.Status variant="incomplete">
+                  <TaskList.Item.Status modifier="incomplete">
                     Incomplete
                   </TaskList.Item.Status>
                 </TaskList.Item>
-                <TaskList.Item variant="with-link">
+                <TaskList.Item modifier="with-link">
                   <TaskList.Item.NameAndHint as="a" href="#">
                     Vaccination history
                   </TaskList.Item.NameAndHint>
-                  <TaskList.Item.Status variant="completed">
+                  <TaskList.Item.Status modifier="completed">
                     Completed
                   </TaskList.Item.Status>
                 </TaskList.Item>
-                <TaskList.Item variant="with-link">
+                <TaskList.Item modifier="with-link">
                   <TaskList.Item.NameAndHint as="a" href="#">
                     Alcohol use
                   </TaskList.Item.NameAndHint>
-                  <TaskList.Item.Status variant="incomplete">
+                  <TaskList.Item.Status modifier="incomplete">
                     Incomplete
                   </TaskList.Item.Status>
                 </TaskList.Item>
-                <TaskList.Item variant="with-link">
+                <TaskList.Item modifier="with-link">
                   <TaskList.Item.NameAndHint as="a" href="#">
                     Body measurements
                   </TaskList.Item.NameAndHint>
-                  <TaskList.Item.Status variant="incomplete">
+                  <TaskList.Item.Status modifier="incomplete">
                     Incomplete
                   </TaskList.Item.Status>
                 </TaskList.Item>

@@ -18,13 +18,13 @@ it('should render the Hero component', () => {
   expect(container).toMatchSnapshot();
 });
 
-it('should render the image-and-content variant of the Hero component', () => {
+it('should render the image-and-content modifier of the Hero component', () => {
   const { container } = render(<WithImageContent />);
 
   expect(container).toMatchSnapshot();
 });
 
-it('should render the image-only variant of the Hero component', () => {
+it('should render the image-only modifier of the Hero component', () => {
   const { container } = render(<WithImageOnly />);
 
   expect(container).toMatchSnapshot();

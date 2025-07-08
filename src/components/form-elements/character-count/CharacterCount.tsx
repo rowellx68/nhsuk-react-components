@@ -7,17 +7,17 @@ import { Factory, factory } from '@/internal/factory/factory';
 
 export type CharacterCountProps = (
   | {
-      variant: 'character-count';
+      modifier: 'character-count';
       maxWords?: undefined;
       maxCharacterLength: number;
     }
   | {
-      variant: 'word-count';
+      modifier: 'word-count';
       maxWords: number;
       maxCharacterLength?: undefined;
     }
 ) &
-  Omit<TextareaProps, 'variant'>;
+  Omit<TextareaProps, 'modifier'>;
 
 type CharacterCountFactory = Factory<{
   props: CharacterCountProps;

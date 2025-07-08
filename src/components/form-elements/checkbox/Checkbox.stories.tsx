@@ -24,7 +24,7 @@ const meta: Meta<typeof Checkbox> = {
   args: {
     labelProps: {
       size: 'l',
-      variant: 'page-heading',
+      modifier: 'page-heading',
     },
   },
   decorators: [

@@ -72,7 +72,7 @@ export const Default: Story = {
 
 export const NoBorder: Story = {
   args: {
-    variant: 'no-border',
+    modifier: 'no-border',
   },
   render: (args) => (
     <SummaryList {...args}>

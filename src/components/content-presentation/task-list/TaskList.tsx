@@ -35,7 +35,7 @@ const TaskList = factory<TaskListFactory>(
 );
 
 export type TaskListItemProps = {
-  variant?: 'with-link';
+  modifier?: 'with-link';
 } & ElementProps<'li'>;
 
 type TaskListItemFactory = Factory<{
@@ -48,17 +48,17 @@ type TaskListItemFactory = Factory<{
 }>;
 
 const TaskListItem = factory<TaskListItemFactory>(
-  ({ variant, className, ...props }: TaskListItemProps, ref) => {
+  ({ modifier, className, ...props }: TaskListItemProps, ref) => {
     const rowId = useIdWithPrefix('task-list-item');
 
     return (
-      <TaskListItemContextProvider value={{ variant, rowId }}>
+      <TaskListItemContextProvider value={{ modifier, rowId }}>
         <li
           ref={ref}
           className={clsx(
             'nhsuk-task-list__item',
             {
-              [`nhsuk-task-list__item--${variant}`]: variant,
+              [`nhsuk-task-list__item--${modifier}`]: modifier,
             },
             className,
           )}
@@ -95,7 +95,7 @@ const TaskListItemNameAndHint =
       }: TaskListItemNameAndHintProps,
       ref,
     ) => {
-      const { variant, rowId } = useTaskListItemContext();
+      const { modifier, rowId } = useTaskListItemContext();
 
       const { className: containerClassName, ...containerRestProps } =
         containerProps;
@@ -104,9 +104,9 @@ const TaskListItemNameAndHint =
       const descriptionId = `${rowId}-hint`;
       const statusId = `${rowId}-status`;
 
-      const Component = variant === 'with-link' ? component : 'div';
+      const Component = modifier === 'with-link' ? component : 'div';
       const componentProps =
-        variant === 'with-link'
+        modifier === 'with-link'
           ? {
               ref,
               ...props,
@@ -140,11 +140,11 @@ const TaskListItemNameAndHint =
   );
 
 export type TaskListItemStatusProps = {
-  variant: 'completed' | 'cannot-start-yet' | 'incomplete';
-} & Omit<TagProps, 'variant' | 'id'>;
+  modifier: 'completed' | 'cannot-start-yet' | 'incomplete';
+} & Omit<TagProps, 'modifier' | 'id'>;
 
 const TaskListItemStatus = ({
-  variant = 'incomplete',
+  modifier = 'incomplete',
   children,
   ...props
 }: TaskListItemStatusProps) => {
@@ -154,15 +154,15 @@ const TaskListItemStatus = ({
 
   return (
     <div
-      id={variant === 'completed' ? statusId : undefined}
+      id={modifier === 'completed' ? statusId : undefined}
       className={clsx(
         'nhsuk-task-list__status',
-        `nhsuk-task-list__status--${variant}`,
+        `nhsuk-task-list__status--${modifier}`,
       )}
       {...props}
     >
-      {variant === 'incomplete' ? (
-        <Tag id={statusId} variant="blue" {...props}>
+      {modifier === 'incomplete' ? (
+        <Tag id={statusId} modifier="blue" {...props}>
           {children}
         </Tag>
       ) : (

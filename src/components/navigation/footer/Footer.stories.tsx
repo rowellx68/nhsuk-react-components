@@ -69,7 +69,7 @@ export const FooterWithNavigationLinks: Story = {
           <Footer.ListItem href="#">Other NHS websites</Footer.ListItem>
           <Footer.ListItem href="#">Profile editor login</Footer.ListItem>
         </Footer.List>
-        <Footer.List variant="meta-links">
+        <Footer.List modifier="meta-links">
           <Footer.ListItem href="#">About us</Footer.ListItem>
           <Footer.ListItem href="#">Accessibility statement</Footer.ListItem>
           <Footer.ListItem href="#">Our policies</Footer.ListItem>

@@ -11,10 +11,10 @@ import { AsElementProps, ElementProps } from '@/types/shared';
 
 export type SummaryListProps = {
   /**
-   * The variant of the summary list
+   * The modifier of the summary list
    * @default 'default'
    */
-  variant?: 'default' | 'no-border';
+  modifier?: 'default' | 'no-border';
 } & ElementProps<'dl'>;
 
 type SummaryListFactory = Factory<{
@@ -30,12 +30,12 @@ type SummaryListFactory = Factory<{
 }>;
 
 const SummaryList = factory<SummaryListFactory>(
-  ({ className, variant, ...props }, ref) => {
+  ({ className, modifier, ...props }, ref) => {
     return (
       <dl
         className={clsx(
           'nhsuk-summary-list',
-          { 'nhsuk-summary-list--no-border': variant === 'no-border' },
+          { 'nhsuk-summary-list--no-border': modifier === 'no-border' },
           className,
         )}
         {...props}
@@ -46,7 +46,7 @@ const SummaryList = factory<SummaryListFactory>(
 );
 
 export type SummaryListRowProps = ElementProps<'div'> & {
-  variant?: 'default' | 'no-border';
+  modifier?: 'default' | 'no-border';
 };
 
 type SummaryListRowFactory = Factory<{
@@ -55,12 +55,12 @@ type SummaryListRowFactory = Factory<{
 }>;
 
 const SummaryListRow = factory<SummaryListRowFactory>(
-  ({ className, variant = 'default', ...props }, ref) => {
+  ({ className, modifier = 'default', ...props }, ref) => {
     return (
       <div
         className={clsx(
           'nhsuk-summary-list__row',
-          { 'nhsuk-summary-list__row--no-border': variant === 'no-border' },
+          { 'nhsuk-summary-list__row--no-border': modifier === 'no-border' },
           className,
         )}
         {...props}

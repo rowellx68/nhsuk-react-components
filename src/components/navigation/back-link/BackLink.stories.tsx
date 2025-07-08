@@ -41,7 +41,7 @@ export const Reverse: Story = {
   args: {
     children: 'Go back',
     href: '#',
-    variant: 'reverse',
+    modifier: 'reverse',
   },
   globals: {
     backgrounds: {

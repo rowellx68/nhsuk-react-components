@@ -35,7 +35,7 @@ export const Default: Story = {
 
 export const Bulleted: Story = {
   args: {
-    variant: 'unordered',
+    modifier: 'unordered',
   },
   render: (args) => (
     <>
@@ -52,7 +52,7 @@ export const Bulleted: Story = {
 
 export const Numbered: Story = {
   args: {
-    variant: 'ordered',
+    modifier: 'ordered',
   },
   render: (args) => (
     <>
@@ -72,7 +72,7 @@ export const Numbered: Story = {
 
 export const WithBorders: Story = {
   args: {
-    variant: 'unordered',
+    modifier: 'unordered',
     border: true,
   },
   render: (args) => (

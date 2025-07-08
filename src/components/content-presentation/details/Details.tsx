@@ -7,7 +7,7 @@ import { ElementProps } from '@/types/shared';
 import { Factory, factory } from '@/internal/factory/factory';
 
 export type DetailsProps = {
-  variant?: 'default' | 'expander';
+  modifier?: 'default' | 'expander';
 } & ElementProps<'details'>;
 
 type DetailsFactory = Factory<{
@@ -20,7 +20,7 @@ type DetailsFactory = Factory<{
 }>;
 
 const Details = factory<DetailsFactory>(
-  ({ variant, className, ...props }: DetailsProps, ref) => {
+  ({ modifier, className, ...props }: DetailsProps, ref) => {
     const internalRef = useRef<HTMLDetailsElement>(null);
 
     useImperativeHandle(ref, () => internalRef.current as HTMLDetailsElement);
@@ -37,7 +37,7 @@ const Details = factory<DetailsFactory>(
       <details
         className={clsx(
           'nhsuk-details',
-          { 'nhsuk-expander': variant === 'expander' },
+          { 'nhsuk-expander': modifier === 'expander' },
           className,
         )}
         {...props}

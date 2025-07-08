@@ -32,11 +32,11 @@ export type CardVariant =
 export type CardProps = (
   | {
       clickable?: boolean;
-      variant?: CardVariant;
+      modifier?: CardVariant;
     }
   | {
       clickable?: false;
-      variant: Extract<
+      modifier: Extract<
         CardVariant,
         'feature' | 'non-urgent' | 'urgent' | 'emergency'
       >;
@@ -61,18 +61,18 @@ type CardFactory = Factory<{
 }>;
 
 const Card = factory<CardFactory>(
-  ({ variant, clickable, className, ...props }, ref) => {
+  ({ modifier, clickable, className, ...props }, ref) => {
     return (
-      <CardProvider value={{ variant: variant, clickable: clickable }}>
+      <CardProvider value={{ modifier: modifier, clickable: clickable }}>
         <div
           className={clsx(
             'nhsuk-card',
             {
               'nhsuk-card--clickable': clickable,
-              [`nhsuk-card--${variant}`]:
-                variant && !careCardVariants.includes(variant),
-              [`nhsuk-card--care nhsuk-card--care--${variant}`]:
-                variant && careCardVariants.includes(variant),
+              [`nhsuk-card--${modifier}`]:
+                modifier && !careCardVariants.includes(modifier),
+              [`nhsuk-card--care nhsuk-card--care--${modifier}`]:
+                modifier && careCardVariants.includes(modifier),
             },
             className,
           )}
@@ -115,25 +115,25 @@ const CardImage = polymorphicFactory<CardImageFactory>(
 export type CardContentProps = ElementProps<'div'>;
 
 const CardContent = ({ className, children, ...props }: CardContentProps) => {
-  const { variant } = useCardContext();
+  const { modifier } = useCardContext();
   return (
     <div
       className={clsx(
         'nhsuk-card__content',
-        { [`nhsuk-card__content--${variant}`]: variant },
+        { [`nhsuk-card__content--${modifier}`]: modifier },
         className,
       )}
       {...props}
     >
       {children}
-      {variant === 'primary' && <ChevronRightCircleIcon />}
+      {modifier === 'primary' && <ChevronRightCircleIcon />}
     </div>
   );
 };
 
 export type CardHeadingProps = {
   /**
-   * This will only be used if the Card variant is either 'non-urgent', 'urgent' or 'emergency'.
+   * This will only be used if the Card modifier is either 'non-urgent', 'urgent' or 'emergency'.
    */
   visuallyHiddenText?: string;
 } & HeadingProps;
@@ -145,8 +145,8 @@ const CardHeading = ({
   visuallyHiddenText,
   ...props
 }: CardHeadingProps) => {
-  const { variant, clickable } = useCardContext();
-  const careCard = variant && careCardVariants.includes(variant);
+  const { modifier, clickable } = useCardContext();
+  const careCard = modifier && careCardVariants.includes(modifier);
 
   const wrapperProps = {
     as: careCard ? 'div' : Fragment,
@@ -165,12 +165,12 @@ const CardHeading = ({
         className={clsx(
           {
             'nhsuk-card__heading':
-              !variant || !careCardVariants.includes(variant),
+              !modifier || !careCardVariants.includes(modifier),
             'nhsuk-card--care__heading': careCard,
-            'nhsuk-card__heading--feature': variant === 'feature',
+            'nhsuk-card__heading--feature': modifier === 'feature',
             'nhsuk-heading-m':
-              variant === 'feature' || (clickable && variant !== 'top-task'),
-            'nhsuk-heading-xs': variant === 'top-task',
+              modifier === 'feature' || (clickable && modifier !== 'top-task'),
+            'nhsuk-heading-xs': modifier === 'top-task',
           },
           className,
         )}

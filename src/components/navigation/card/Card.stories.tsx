@@ -95,7 +95,7 @@ export const Clickable: Story = {
 
 export const Feature: Story = {
   args: {
-    variant: 'feature',
+    modifier: 'feature',
   },
   render: (args) => (
     <Card.Group>
@@ -113,7 +113,7 @@ export const Feature: Story = {
 
 export const CareCardEmergency: Story = {
   args: {
-    variant: 'emergency',
+    modifier: 'emergency',
   },
   render: (args) => (
     <Card.Group>
@@ -123,7 +123,7 @@ export const CareCardEmergency: Story = {
             Call 999 if you have sudden chest pain that:
           </Card.Heading>
           <Card.Content>
-            <List variant="unordered">
+            <List modifier="unordered">
               <List.Item>spreads to your arms, back, neck or jaw</List.Item>
               <List.Item>makes your chest feel tight or heavy</List.Item>
               <List.Item>
@@ -144,7 +144,7 @@ export const CareCardEmergency: Story = {
 
 export const CareCardNonUrgent: Story = {
   args: {
-    variant: 'non-urgent',
+    modifier: 'non-urgent',
   },
   render: (args) => (
     <Card.Group>
@@ -154,7 +154,7 @@ export const CareCardNonUrgent: Story = {
             Speak to a GP if:
           </Card.Heading>
           <Card.Content>
-            <List variant="unordered">
+            <List modifier="unordered">
               <List.Item>you're not sure it's chickenpox</List.Item>
               <List.Item>
                 the skin around the blisters is red, hot or painful (signs of
@@ -181,7 +181,7 @@ export const CareCardNonUrgent: Story = {
 
 export const CareCardUrgent: Story = {
   args: {
-    variant: 'urgent',
+    modifier: 'urgent',
   },
   render: (args) => (
     <Card.Group>
@@ -191,7 +191,7 @@ export const CareCardUrgent: Story = {
             Ask for an urgent GP appointment if:
           </Card.Heading>
           <Card.Content>
-            <List variant="unordered">
+            <List modifier="unordered">
               <List.Item>you're an adult and have chickenpox</List.Item>
               <List.Item>
                 you're pregnant and haven't had chickenpox before and you've
@@ -217,7 +217,7 @@ export const CareCardUrgent: Story = {
 
 export const Primary: Story = {
   args: {
-    variant: 'primary',
+    modifier: 'primary',
     clickable: true,
   },
   render: (args) => (
@@ -237,7 +237,7 @@ export const Primary: Story = {
 
 export const PrimaryWithDescription: Story = {
   args: {
-    variant: 'primary',
+    modifier: 'primary',
     clickable: true,
   },
   render: (args) => (
@@ -261,7 +261,7 @@ export const PrimaryWithDescription: Story = {
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
+    modifier: 'secondary',
     clickable: true,
   },
   render: (args) => (
@@ -286,7 +286,7 @@ export const Secondary: Story = {
 export const TopTask: Story = {
   args: {
     clickable: true,
-    variant: 'top-task',
+    modifier: 'top-task',
   },
   render: (args) => (
     <Card.Group>
