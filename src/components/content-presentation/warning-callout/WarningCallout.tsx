@@ -1,79 +1,45 @@
 import React from 'react';
 import clsx from 'clsx';
 import { VisuallyHidden } from '@/components/visually-hidden/VisuallyHidden';
-import { Base, BaseProps } from '@/internal/base/Base';
-import {
-  polymorphicFactory,
-  PolymorphicFactory,
-} from '@/internal/factory/polymorphic-factory';
-import {
-  AsElementProps,
-  ElementProps,
-  HeadingLevel,
-  WithVisuallyHiddenTextProps,
-} from '@/types/shared';
+import { Base } from '@/internal/base/Base';
+import { ElementProps, HeadingLevel } from '@/types/shared';
 import { Factory, factory } from '@/internal/factory/factory';
 
-export type WarningCalloutProps = ElementProps<'div'>;
+export type WarningCalloutProps = ElementProps<'div'> & {
+  headingLevel?: HeadingLevel;
+  heading: React.ReactNode;
+};
 
 type WarningCalloutFactory = Factory<{
   props: WarningCalloutProps;
   ref: HTMLDivElement;
-  staticComponents: {
-    Label: typeof WarningCalloutLabel;
-  };
 }>;
 
 const WarningCallout = factory<WarningCalloutFactory>(
-  ({ className, children, ...props }, ref) => {
+  ({ className, children, heading, headingLevel = 'h3', ...props }, ref) => {
+    const visuallyHiddenText =
+      typeof heading === 'string' && heading.toLowerCase().includes('important')
+        ? ':'
+        : 'Important:';
+
     return (
       <div
         className={clsx('nhsuk-warning-callout', className)}
         {...props}
         ref={ref}
       >
+        <Base as={headingLevel} className="'nhsuk-warning-callout__label'">
+          <span role="text">
+            <VisuallyHidden>{visuallyHiddenText}</VisuallyHidden>
+            {heading}
+          </span>
+        </Base>
         {children}
       </div>
     );
   },
 );
 
-export type WarningCalloutLabelProps = AsElementProps<HeadingLevel> &
-  WithVisuallyHiddenTextProps &
-  BaseProps;
-
-type WarningCalloutLabelFactory = PolymorphicFactory<{
-  props: WarningCalloutLabelProps;
-  defaultComponent: 'h3';
-  defaultRef: HTMLHeadingElement;
-}>;
-
-const WarningCalloutLabel = polymorphicFactory<WarningCalloutLabelFactory>(
-  (
-    { className, children, as: component = 'h3', visuallyHiddenText, ...props },
-    ref,
-  ) => {
-    return (
-      <Base
-        as={component}
-        className={clsx('nhsuk-warning-callout__label', className)}
-        {...props}
-        ref={ref}
-      >
-        <span role="text">
-          {visuallyHiddenText && (
-            <VisuallyHidden>{visuallyHiddenText}</VisuallyHidden>
-          )}
-          {children}
-        </span>
-      </Base>
-    );
-  },
-);
-
 WarningCallout.displayName = 'WarningCallout';
-WarningCalloutLabel.displayName = 'WarningCallout.Label';
 
-WarningCallout.Label = WarningCalloutLabel;
-
-export { WarningCallout, WarningCalloutLabel };
+export { WarningCallout };

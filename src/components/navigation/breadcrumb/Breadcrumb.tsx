@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { VisuallyHidden } from '@/components/visually-hidden/VisuallyHidden';
 import { Base, BaseProps } from '@/internal/base/Base';
@@ -6,11 +6,7 @@ import {
   polymorphicFactory,
   PolymorphicFactory,
 } from '@/internal/factory/polymorphic-factory';
-import {
-  AsElementProps,
-  ElementProps,
-  WithVisuallyHiddenTextProps,
-} from '@/types/shared';
+import { AsElementProps, ElementProps } from '@/types/shared';
 import { Factory, factory } from '@/internal/factory/factory';
 
 export type BreadcrumbProps = {
@@ -21,9 +17,7 @@ type BreadcrumbFactory = Factory<{
   props: BreadcrumbProps;
   ref: HTMLDivElement;
   staticComponents: {
-    List: typeof BreadcrumbList;
-    ListItem: typeof BreadcrumbListItem;
-    BackLink: typeof BreadcrumbBackLink;
+    Item: typeof BreadcrumbItem;
   };
 }>;
 
@@ -32,6 +26,22 @@ const Breadcrumb = factory<BreadcrumbFactory>(
     { children, className, modifier = 'default', ...props }: BreadcrumbProps,
     ref,
   ) => {
+    const items = React.Children.toArray(children).filter(
+      (child) => React.isValidElement(child) && child.type === BreadcrumbItem,
+    );
+
+    const lastItem = items.at(-1) as
+      | ReactElement<BreadcrumbItemProps>
+      | undefined;
+
+    const backLink =
+      lastItem != undefined
+        ? React.cloneElement(lastItem, {
+            __internal_modifier: 'backlink',
+            __internal_visuallyHiddenText: 'Back to &nbsp;',
+          })
+        : null;
+
     return (
       <nav
         className={clsx(
@@ -43,82 +53,55 @@ const Breadcrumb = factory<BreadcrumbFactory>(
         {...props}
         ref={ref}
       >
-        {children}
+        <ol className="nhsuk-breadcrumb__list">{children}</ol>
+        {backLink}
       </nav>
     );
   },
 );
 
-export type BreadcrumbListProps = ElementProps<'ol', 'type'>;
-
-const BreadcrumbList = ({
-  children,
-  className,
-  ...props
-}: BreadcrumbListProps) => {
-  return (
-    <ol className={clsx('nhsuk-breadcrumb__list', className)} {...props}>
-      {children}
-    </ol>
+export type BreadcrumbItemProps = BaseProps &
+  (
+    | {
+        __internal_modifier?: 'default';
+        __internal_visuallyHiddenText?: undefined;
+      }
+    | {
+        __internal_modifier: 'backlink';
+        __internal_visuallyHiddenText?: string;
+      }
   );
-};
 
-export type BreadcrumbListItemProps = BaseProps & {
-  modifier?: 'default' | 'reverse';
-};
-
-type BaseCrumbListItemFactory = PolymorphicFactory<{
-  props: BreadcrumbListItemProps;
+type BaseCrumbItemFactory = PolymorphicFactory<{
+  props: BreadcrumbItemProps;
   defaultComponent: 'a';
   defaultRef: HTMLAnchorElement;
 }>;
 
-const BreadcrumbListItem = polymorphicFactory<BaseCrumbListItemFactory>(
+const BreadcrumbItem = polymorphicFactory<BaseCrumbItemFactory>(
   (
     {
       className,
       as: component = 'a',
-      modifier = 'default',
+      children,
+      __internal_modifier = 'default',
+      __internal_visuallyHiddenText = 'Back to &nbsp;',
       ...props
-    }: BreadcrumbListItemProps & AsElementProps,
+    }: BreadcrumbItemProps & AsElementProps,
     ref,
   ) => {
-    return (
+    return __internal_modifier === 'default' ? (
       <li className="nhsuk-breadcrumb__item">
         <Base
           as={component}
-          className={clsx(
-            'nhsuk-breadcrumb__link',
-            { 'nhsuk-breadcrumb--reverse': modifier === 'reverse' },
-            className,
-          )}
+          className={clsx('nhsuk-breadcrumb__link', className)}
           {...props}
           ref={ref}
-        />
+        >
+          {children}
+        </Base>
       </li>
-    );
-  },
-);
-export type BreadcrumbBackLinkProps = BaseProps & WithVisuallyHiddenTextProps;
-
-type BreadcrumbBackLinkFactory = PolymorphicFactory<{
-  props: BreadcrumbBackLinkProps;
-  defaultComponent: 'a';
-  defaultRef: HTMLAnchorElement;
-}>;
-
-const BreadcrumbBackLink = polymorphicFactory<BreadcrumbBackLinkFactory>(
-  (
-    {
-      className,
-      children,
-      visuallyHiddenText = 'Back to &nbsp;',
-      as: component = 'a',
-      ...props
-    }: BreadcrumbBackLinkProps & AsElementProps,
-    ref,
-  ) => {
-    return (
+    ) : (
       <p className="nhsuk-breadcrumb__back">
         <Base
           as={component}
@@ -126,7 +109,7 @@ const BreadcrumbBackLink = polymorphicFactory<BreadcrumbBackLinkFactory>(
           {...props}
           ref={ref}
         >
-          <VisuallyHidden>{visuallyHiddenText}</VisuallyHidden>
+          <VisuallyHidden>{__internal_visuallyHiddenText}</VisuallyHidden>
           {children}
         </Base>
       </p>
@@ -135,12 +118,8 @@ const BreadcrumbBackLink = polymorphicFactory<BreadcrumbBackLinkFactory>(
 );
 
 Breadcrumb.displayName = 'Breadcrumb';
-BreadcrumbList.displayName = 'Breadcrumb.List';
-BreadcrumbListItem.displayName = 'Breadcrumb.ListItem';
-BreadcrumbBackLink.displayName = 'Breadcrumb.BackLink';
+BreadcrumbItem.displayName = 'Breadcrumb.Item';
 
-Breadcrumb.List = BreadcrumbList;
-Breadcrumb.ListItem = BreadcrumbListItem;
-Breadcrumb.BackLink = BreadcrumbBackLink;
+Breadcrumb.Item = BreadcrumbItem;
 
-export { Breadcrumb, BreadcrumbList, BreadcrumbListItem, BreadcrumbBackLink };
+export { Breadcrumb, BreadcrumbItem };

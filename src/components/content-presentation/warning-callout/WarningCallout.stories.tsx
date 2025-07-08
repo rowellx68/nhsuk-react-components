@@ -20,26 +20,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  args: {
+    heading: 'Important',
+  },
   render: (args) => (
     <WarningCallout {...args}>
-      <WarningCallout.Label visuallyHiddenText="Important: ">
-        School, nursery or work
-      </WarningCallout.Label>
-      <p>
-        Stay away from school, nursery or work until all the spots have crusted
-        over. This is usually 5 days after the spots first appeared.
-      </p>
-    </WarningCallout>
-  ),
-};
-
-/**
- * If the heading is simply the word "Important" or it includes the word "important", you do not need to use visually hidden text.
- */
-export const WithNoVisuallyHiddenText: Story = {
-  render: (args) => (
-    <WarningCallout {...args}>
-      <WarningCallout.Label>Important</WarningCallout.Label>
       <p>
         For safety, tell your doctor or pharmacist if you're taking any other
         medicines, including herbal medicines, vitamins or supplements.
@@ -48,14 +33,14 @@ export const WithNoVisuallyHiddenText: Story = {
   ),
 };
 
-export const WithDifferentHeadingLevels: Story = {
+export const CustomHeading: Story = {
+  args: {
+    heading: 'School, nursery or work',
+  },
   render: (args) => (
     <WarningCallout {...args}>
-      <WarningCallout.Label as="h2">Important</WarningCallout.Label>
-      <p>
-        For safety, tell your doctor or pharmacist if you're taking any other
-        medicines, including herbal medicines, vitamins or supplements.
-      </p>
+      Stay away from school, nursery or work until all the spots have crusted
+      over. This is usually 5 days after the spots first appeared.
     </WarningCallout>
   ),
 };

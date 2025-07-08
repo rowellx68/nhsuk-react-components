@@ -11,9 +11,7 @@ const meta: Meta<typeof Breadcrumb> = {
   title: 'Components/Navigation/Breadcrumb',
   component: Breadcrumb,
   subcomponents: {
-    'Breadcrumb.List': Breadcrumb.List,
-    'Breadcrumb.ListItem': Breadcrumb.ListItem,
-    'Breadcrumb.BackLink': Breadcrumb.BackLink,
+    'Breadcrumb.Item': Breadcrumb.Item,
   } as Record<string, React.ComponentType<any>>,
 };
 
@@ -24,18 +22,11 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: (args) => (
     <Breadcrumb {...args}>
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem href="/level-one">Level one</Breadcrumb.ListItem>
-        <Breadcrumb.ListItem href="/level-one/level-two">
-          Level two
-        </Breadcrumb.ListItem>
-        <Breadcrumb.ListItem href="/level-one/level-two/level-three">
-          Level three
-        </Breadcrumb.ListItem>
-      </Breadcrumb.List>
-      <Breadcrumb.BackLink href="/level-one/level-two/level-three">
+      <Breadcrumb.Item href="/level-one">Level one</Breadcrumb.Item>
+      <Breadcrumb.Item href="/level-one/level-two">Level two</Breadcrumb.Item>
+      <Breadcrumb.Item href="/level-one/level-two/level-three">
         Level three
-      </Breadcrumb.BackLink>
+      </Breadcrumb.Item>
     </Breadcrumb>
   ),
 };
@@ -51,18 +42,11 @@ export const Reverse: Story = {
   },
   render: (args) => (
     <Breadcrumb {...args}>
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem href="/level-one">Level one</Breadcrumb.ListItem>
-        <Breadcrumb.ListItem href="/level-one/level-two">
-          Level two
-        </Breadcrumb.ListItem>
-        <Breadcrumb.ListItem href="/level-one/level-two/level-three">
-          Level three
-        </Breadcrumb.ListItem>
-      </Breadcrumb.List>
-      <Breadcrumb.BackLink href="/level-one/level-two/level-three">
+      <Breadcrumb.Item href="/level-one">Level one</Breadcrumb.Item>
+      <Breadcrumb.Item href="/level-one/level-two">Level two</Breadcrumb.Item>
+      <Breadcrumb.Item href="/level-one/level-two/level-three">
         Level three
-      </Breadcrumb.BackLink>
+      </Breadcrumb.Item>
     </Breadcrumb>
   ),
 };

@@ -5,7 +5,7 @@ import { composeStory } from '@storybook/react-vite';
 import meta, {
   DoList as DoListStory,
   DontList as DontListStory,
-} from '../DoAndDontList.stories';
+} from '../DoDontList.stories';
 
 const DoList = composeStory(DoListStory, meta);
 const DontList = composeStory(DontListStory, meta);

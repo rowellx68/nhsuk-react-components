@@ -16,6 +16,7 @@ type DetailsFactory = Factory<{
   staticComponents: {
     Summary: typeof DetailsSummary;
     Text: typeof DetailsText;
+    ExpanderGroup: typeof DetailsExpanderGroup;
   };
 }>;
 
@@ -67,11 +68,27 @@ const DetailsText = ({ className, ...props }: DetailsTextProps) => {
   return <div className={clsx('nhsuk-details__text', className)} {...props} />;
 };
 
+export type ExpanderGroupProps = ElementProps<'div'>;
+
+const DetailsExpanderGroup = ({
+  children,
+  className,
+  ...props
+}: ExpanderGroupProps) => {
+  return (
+    <div className={clsx('nhsuk-expander-group', className)} {...props}>
+      {children}
+    </div>
+  );
+};
+
 Details.displayName = 'Details';
 DetailsSummary.displayName = 'Details.Summary';
 DetailsText.displayName = 'Details.Text';
+DetailsExpanderGroup.displayName = 'Details.ExpanderGroup';
 
 Details.Summary = DetailsSummary;
 Details.Text = DetailsText;
+Details.ExpanderGroup = DetailsExpanderGroup;
 
-export { Details, DetailsSummary, DetailsText };
+export { Details, DetailsSummary, DetailsText, DetailsExpanderGroup };

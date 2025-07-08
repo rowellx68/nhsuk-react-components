@@ -17,10 +17,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  args: {
+    title: 'Application complete',
+  },
   render: (args) => (
-    <Panel {...args}>
-      <Panel.Title>Application complete</Panel.Title>
-      <Panel.Body>Confirmation has been sent to you by email</Panel.Body>
-    </Panel>
+    <Panel {...args}>Confirmation has been sent to you by email</Panel>
   ),
 };

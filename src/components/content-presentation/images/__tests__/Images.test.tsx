@@ -5,18 +5,18 @@ import { composeStory } from '@storybook/react-vite';
 import meta, {
   ImageWithCaption as ImageWithCaptionStory,
   ImageWithoutCaption as ImageWithoutCaptionStory,
-} from '../Figure.stories';
+} from '../Images.stories';
 
 const ImageWithCaption = composeStory(ImageWithCaptionStory, meta);
 const ImageWithoutCaption = composeStory(ImageWithoutCaptionStory, meta);
 
-it('should render the Figure component', () => {
+it('should render the Images component', () => {
   const { container } = render(<ImageWithCaption />);
 
   expect(container).toMatchSnapshot();
 });
 
-it('should render the Figure component without caption', () => {
+it('should render the Images component without caption', () => {
   const { container } = render(<ImageWithoutCaption />);
 
   expect(container).toMatchSnapshot();

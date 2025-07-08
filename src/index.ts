@@ -1,9 +1,8 @@
 // Content Presentation
 export * from '@/components/content-presentation/details/Details';
-export * from '@/components/content-presentation/do-and-dont-list/DoAndDontList';
-export * from '@/components/content-presentation/expander/Expander';
-export * from '@/components/content-presentation/figure/Figure';
+export * from '@/components/content-presentation/do-dont-list/DoDontList';
 export * from '@/components/content-presentation/hero/Hero';
+export * from '@/components/content-presentation/images/Images';
 export * from '@/components/content-presentation/inset-text/InsetText';
 export * from '@/components/content-presentation/panel/Panel';
 export * from '@/components/content-presentation/summary-list/SummaryList';
