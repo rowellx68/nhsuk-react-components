@@ -10,10 +10,6 @@ import {
 import { AsElementProps, ElementProps } from '@/types/shared';
 
 export type SummaryListProps = {
-  /**
-   * The modifier of the summary list
-   * @default 'default'
-   */
   modifier?: 'default' | 'no-border';
 } & ElementProps<'dl'>;
 
@@ -22,10 +18,6 @@ type SummaryListFactory = Factory<{
   ref: HTMLDListElement;
   staticComponents: {
     Row: typeof SummaryListRow;
-    Key: typeof SummaryListKey;
-    Value: typeof SummaryListValue;
-    Actions: typeof SummaryListActions;
-    ActionLink: typeof SummaryListActionLink;
   };
 }>;
 
@@ -45,60 +37,63 @@ const SummaryList = factory<SummaryListFactory>(
   },
 );
 
-export type SummaryListRowProps = ElementProps<'div'> & {
-  modifier?: 'default' | 'no-border';
+export type SummaryListRowProps = Omit<ElementProps<'div'>, 'children'> & {
+  rowKey: React.ReactNode;
+  rowKeyProps?: Pick<ElementProps<'dt'>, 'className'>;
+  value: React.ReactNode;
+  valueProps?: Pick<ElementProps<'dd'>, 'className'>;
+  actions?: React.ReactNode;
+  actionsProps?: Pick<ElementProps<'dd'>, 'className'>;
 };
 
 type SummaryListRowFactory = Factory<{
   props: SummaryListRowProps;
   ref: HTMLDivElement;
+  staticComponents: {
+    Action: typeof SummaryListRowAction;
+  };
 }>;
 
 const SummaryListRow = factory<SummaryListRowFactory>(
-  ({ className, modifier = 'default', ...props }, ref) => {
+  (
+    {
+      className,
+      rowKey,
+      rowKeyProps = {},
+      value,
+      valueProps = {},
+      actions,
+      actionsProps = {},
+      ...props
+    },
+    ref,
+  ) => {
     return (
       <div
-        className={clsx(
-          'nhsuk-summary-list__row',
-          { 'nhsuk-summary-list__row--no-border': modifier === 'no-border' },
-          className,
-        )}
+        className={clsx('nhsuk-summary-list__row', className)}
         {...props}
         ref={ref}
-      />
+      >
+        <dt className={clsx('nhsuk-summary-list__key', rowKeyProps.className)}>
+          {rowKey}
+        </dt>
+        <dd className={clsx('nhsuk-summary-list__value', valueProps.className)}>
+          {value}
+        </dd>
+        {actions && (
+          <dd
+            className={clsx(
+              'nhsuk-summary-list__actions',
+              actionsProps.className,
+            )}
+          >
+            {actions}
+          </dd>
+        )}
+      </div>
     );
   },
 );
-
-export type SummaryListRowKeyProps = ElementProps<'dt'>;
-
-const SummaryListKey = ({ className, ...props }: SummaryListRowKeyProps) => {
-  return (
-    <dt className={clsx('nhsuk-summary-list__key', className)} {...props} />
-  );
-};
-
-export type SummaryListRowValueProps = ElementProps<'dd'>;
-
-const SummaryListValue = ({
-  className,
-  ...props
-}: SummaryListRowValueProps) => {
-  return (
-    <dd className={clsx('nhsuk-summary-list__value', className)} {...props} />
-  );
-};
-
-export type SummaryListRowActionsProps = ElementProps<'dd'>;
-
-const SummaryListActions = ({
-  className,
-  ...props
-}: SummaryListRowActionsProps) => {
-  return (
-    <dd className={clsx('nhsuk-summary-list__actions', className)} {...props} />
-  );
-};
 
 export type SummaryListRowActionLinkProps = {
   visuallyHiddenText: string;
@@ -110,7 +105,7 @@ type SummaryListRowActionLinkFactory = PolymorphicFactory<{
   defaultRef: HTMLAnchorElement;
 }>;
 
-const SummaryListActionLink =
+const SummaryListRowAction =
   polymorphicFactory<SummaryListRowActionLinkFactory>(
     (
       {
@@ -132,22 +127,9 @@ const SummaryListActionLink =
 
 SummaryList.displayName = 'SummaryList';
 SummaryListRow.displayName = 'SummaryList.Row';
-SummaryListKey.displayName = 'SummaryList.Key';
-SummaryListValue.displayName = 'SummaryList.Value';
-SummaryListActions.displayName = 'SummaryList.Actions';
-SummaryListActionLink.displayName = 'SummaryList.ActionLink';
+SummaryListRowAction.displayName = 'SummaryList.Row.Action';
 
 SummaryList.Row = SummaryListRow;
-SummaryList.Key = SummaryListKey;
-SummaryList.Value = SummaryListValue;
-SummaryList.Actions = SummaryListActions;
-SummaryList.ActionLink = SummaryListActionLink;
+SummaryList.Row.Action = SummaryListRowAction;
 
-export {
-  SummaryList,
-  SummaryListRow,
-  SummaryListKey,
-  SummaryListValue,
-  SummaryListActions,
-  SummaryListActionLink,
-};
+export { SummaryList, SummaryListRow, SummaryListRowAction };
