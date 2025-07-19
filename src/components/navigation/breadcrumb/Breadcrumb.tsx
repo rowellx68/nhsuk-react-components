@@ -30,7 +30,7 @@ const Breadcrumb = factory<BreadcrumbFactory>(
       (child) => React.isValidElement(child) && child.type === BreadcrumbItem,
     );
 
-    const lastItem = items.at(-1) as
+    const lastItem = items[items.length - 1] as
       | ReactElement<BreadcrumbItemProps>
       | undefined;
 

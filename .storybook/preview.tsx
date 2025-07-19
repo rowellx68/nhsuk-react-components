@@ -29,9 +29,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: [
-          'Patterns',
-        ],
+        order: ['Patterns'],
       },
     },
   },

@@ -2,19 +2,9 @@
 
 import React from 'react';
 import clsx from 'clsx';
-import {
-  TaskListItemContextProvider,
-  useTaskListItemContext,
-} from './TaskList.context';
-import { Base, BaseProps } from '@/internal/base/Base';
-import { AsElementProps, ElementProps } from '@/types/shared';
+import { TaskListItem } from './TaskListItem';
+import { ElementProps } from '@/types/shared';
 import { Factory, factory } from '@/internal/factory/factory';
-import { useIdWithPrefix } from '@/internal/hooks/use-id-with-prefix';
-import {
-  polymorphicFactory,
-  PolymorphicFactory,
-} from '@/internal/factory/polymorphic-factory';
-import { Tag, TagProps } from '@/components/content-presentation/tag/Tag';
 
 export type TaskListProps = ElementProps<'ul'>;
 
@@ -26,7 +16,7 @@ type TaskListFactory = Factory<{
   };
 }>;
 
-const TaskList = factory<TaskListFactory>(
+export const TaskList = factory<TaskListFactory>(
   ({ className, ...props }: TaskListProps, ref) => {
     return (
       <ul ref={ref} className={clsx('nhsuk-task-list', className)} {...props} />
@@ -34,151 +24,6 @@ const TaskList = factory<TaskListFactory>(
   },
 );
 
-export type TaskListItemProps = {
-  modifier?: 'with-link';
-} & ElementProps<'li'>;
-
-type TaskListItemFactory = Factory<{
-  props: TaskListItemProps;
-  ref: HTMLLIElement;
-  staticComponents: {
-    NameAndHint: typeof TaskListItemNameAndHint;
-    Status: typeof TaskListItemStatus;
-  };
-}>;
-
-const TaskListItem = factory<TaskListItemFactory>(
-  ({ modifier, className, ...props }: TaskListItemProps, ref) => {
-    const rowId = useIdWithPrefix('task-list-item');
-
-    return (
-      <TaskListItemContextProvider value={{ modifier, rowId }}>
-        <li
-          ref={ref}
-          className={clsx(
-            'nhsuk-task-list__item',
-            {
-              [`nhsuk-task-list__item--${modifier}`]: modifier,
-            },
-            className,
-          )}
-          {...props}
-        />
-      </TaskListItemContextProvider>
-    );
-  },
-);
-
-export type TaskListItemNameAndHintProps = {
-  hint?: React.ReactNode;
-  containerProps?: ElementProps<'div'>;
-  hintProps?: ElementProps<'div'>;
-} & BaseProps &
-  AsElementProps<'a'>;
-
-type TaskListItemNameAndHintFactory = PolymorphicFactory<{
-  props: TaskListItemNameAndHintProps;
-  defaultComponent: 'a';
-  defaultRef: HTMLAnchorElement;
-}>;
-
-const TaskListItemNameAndHint =
-  polymorphicFactory<TaskListItemNameAndHintFactory>(
-    (
-      {
-        children,
-        hint,
-        as: component = 'a',
-        containerProps = {},
-        hintProps = {},
-        ...props
-      }: TaskListItemNameAndHintProps,
-      ref,
-    ) => {
-      const { modifier, rowId } = useTaskListItemContext();
-
-      const { className: containerClassName, ...containerRestProps } =
-        containerProps;
-      const { className: hintClassName, ...hintRestProps } = hintProps;
-
-      const descriptionId = `${rowId}-hint`;
-      const statusId = `${rowId}-status`;
-
-      const Component = modifier === 'with-link' ? component : 'div';
-      const componentProps =
-        modifier === 'with-link'
-          ? {
-              ref,
-              ...props,
-              'aria-describedby': clsx(statusId, { [descriptionId]: hint }),
-            }
-          : {};
-
-      return (
-        <div
-          className={clsx(
-            'nhsuk-task-list__item-name-and-hint',
-            containerClassName,
-          )}
-          {...containerRestProps}
-        >
-          <Base as={Component} {...componentProps}>
-            {children}
-          </Base>
-          {hint && (
-            <div
-              id={descriptionId}
-              className={clsx('nhsuk-task-list__hint', hintClassName)}
-              {...hintRestProps}
-            >
-              {hint}
-            </div>
-          )}
-        </div>
-      );
-    },
-  );
-
-export type TaskListItemStatusProps = {
-  modifier: 'completed' | 'cannot-start-yet' | 'incomplete';
-} & Omit<TagProps, 'modifier' | 'id'>;
-
-const TaskListItemStatus = ({
-  modifier = 'incomplete',
-  children,
-  ...props
-}: TaskListItemStatusProps) => {
-  const { rowId } = useTaskListItemContext();
-
-  const statusId = `${rowId}-status`;
-
-  return (
-    <div
-      id={modifier === 'completed' ? statusId : undefined}
-      className={clsx(
-        'nhsuk-task-list__status',
-        `nhsuk-task-list__status--${modifier}`,
-      )}
-      {...props}
-    >
-      {modifier === 'incomplete' ? (
-        <Tag id={statusId} modifier="blue" {...props}>
-          {children}
-        </Tag>
-      ) : (
-        children
-      )}
-    </div>
-  );
-};
-
 TaskList.Item = TaskListItem;
-TaskListItem.NameAndHint = TaskListItemNameAndHint;
-TaskListItem.Status = TaskListItemStatus;
 
 TaskList.displayName = 'TaskList';
-TaskListItem.displayName = 'TaskList.Item';
-TaskListItemNameAndHint.displayName = 'TaskList.Item.NameAndHint';
-TaskListItemStatus.displayName = 'TaskList.Item.Status';
-
-export { TaskList, TaskListItem, TaskListItemNameAndHint, TaskListItemStatus };

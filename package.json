@@ -104,7 +104,7 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./assets": {
+    "./assets/nhs-logo": {
       "import": "./dist/assets/NhsLogo.mjs",
       "require": "./dist/assets/NhsLogo.js"
     },
@@ -156,6 +156,10 @@
       "import": "./dist/icons/tick/Tick.mjs",
       "require": "./dist/icons/tick/Tick.js"
     },
+    "./icons/user": {
+      "import": "./dist/icons/user/User.mjs",
+      "require": "./dist/icons/user/User.js"
+    },
     "./components/content-presentation/details": {
       "import": "./dist/components/content-presentation/details/Details.mjs",
       "require": "./dist/components/content-presentation/details/Details.js"
@@ -164,17 +168,13 @@
       "import": "./dist/components/content-presentation/do-dont-list/DoDontList.mjs",
       "require": "./dist/components/content-presentation/do-dont-list/DoDontList.js"
     },
-    "./components/content-presentation/expander": {
-      "import": "./dist/components/content-presentation/expander/Expander.mjs",
-      "require": "./dist/components/content-presentation/expander/Expander.js"
-    },
-    "./components/content-presentation/figure": {
-      "import": "./dist/components/content-presentation/figure/Figure.mjs",
-      "require": "./dist/components/content-presentation/figure/Figure.js"
-    },
     "./components/content-presentation/hero": {
       "import": "./dist/components/content-presentation/hero/Hero.mjs",
       "require": "./dist/components/content-presentation/hero/Hero.js"
+    },
+    "./components/content-presentation/images": {
+      "import": "./dist/components/content-presentation/images/Images.mjs",
+      "require": "./dist/components/content-presentation/images/Images.js"
     },
     "./components/content-presentation/inset-text": {
       "import": "./dist/components/content-presentation/inset-text/InsetText.mjs",
@@ -187,6 +187,14 @@
     "./components/content-presentation/summary-list": {
       "import": "./dist/components/content-presentation/summary-list/SummaryList.mjs",
       "require": "./dist/components/content-presentation/summary-list/SummaryList.js"
+    },
+    "./components/content-presentation/summary-list/row": {
+      "import": "./dist/components/content-presentation/summary-list/SummaryListRow.mjs",
+      "require": "./dist/components/content-presentation/summary-list/SummaryListRow.js"
+    },
+    "./components/content-presentation/summary-list/row-action": {
+      "import": "./dist/components/content-presentation/summary-list/SummaryListRowAction.mjs",
+      "require": "./dist/components/content-presentation/summary-list/SummaryListRowAction.js"
     },
     "./components/content-presentation/table": {
       "import": "./dist/components/content-presentation/table/Table.mjs",
@@ -203,6 +211,14 @@
     "./components/content-presentation/task-list": {
       "import": "./dist/components/content-presentation/task-list/TaskList.mjs",
       "require": "./dist/components/content-presentation/task-list/TaskList.js"
+    },
+    "./components/content-presentation/task-list/item": {
+      "import": "./dist/components/content-presentation/task-list/TaskListItem.mjs",
+      "require": "./dist/components/content-presentation/task-list/TaskListItem.js"
+    },
+    "./components/content-presentation/task-list/item-status": {
+      "import": "./dist/components/content-presentation/task-list/TaskListItemStatus.mjs",
+      "require": "./dist/components/content-presentation/task-list/TaskListItemStatus.js"
     },
     "./components/content-presentation/warning-callout": {
       "import": "./dist/components/content-presentation/warning-callout/WarningCallout.mjs",

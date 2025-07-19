@@ -13,7 +13,7 @@ const files = fg.globSync([
 ]);
 
 const exports = files.reduce((acc, file) => {
-  const exportKey =
+  let exportKey =
     file === 'dist/index.mjs'
       ? '.'
       : file.includes('/internal')
@@ -26,6 +26,22 @@ const exports = files.reduce((acc, file) => {
             .replace('.mjs', '');
 
   const basePath = `./${file}`.replace('.mjs', '');
+
+  const exportKeyLastPart = exportKey.split('/')
+    .pop();
+
+  const basePathLastPart = basePath
+    .split('/')
+    .pop()
+    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
+    .replace(/([a-z\d])([A-Z])/g, '$1-$2')
+    .toLowerCase();
+
+  if (exportKeyLastPart !== basePathLastPart && !basePathLastPart.startsWith('index')) {
+    const key = basePathLastPart.replace(`${exportKeyLastPart}-`, '');
+
+    exportKey = `${exportKey}/${key}`;
+  }
 
   return {
     ...acc,

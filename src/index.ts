@@ -6,10 +6,14 @@ export * from '@/components/content-presentation/images/Images';
 export * from '@/components/content-presentation/inset-text/InsetText';
 export * from '@/components/content-presentation/panel/Panel';
 export * from '@/components/content-presentation/summary-list/SummaryList';
+export * from '@/components/content-presentation/summary-list/SummaryListRow';
+export * from '@/components/content-presentation/summary-list/SummaryListRowAction';
 export * from '@/components/content-presentation/table/Table';
 export * from '@/components/content-presentation/tabs/Tabs';
 export * from '@/components/content-presentation/tag/Tag';
 export * from '@/components/content-presentation/task-list/TaskList';
+export * from '@/components/content-presentation/task-list/TaskListItem';
+export * from '@/components/content-presentation/task-list/TaskListItemStatus';
 export * from '@/components/content-presentation/warning-callout/WarningCallout';
 
 // Core

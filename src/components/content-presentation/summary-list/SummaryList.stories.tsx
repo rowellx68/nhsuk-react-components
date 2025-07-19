@@ -23,7 +23,7 @@ type Story = StoryObj<typeof SummaryList>;
 export const Default: Story = {
   render: (args) => (
     <SummaryList {...args}>
-      <SummaryList.Row
+      {/* <SummaryList.Row
         rowKey="Name"
         value="John Smith"
         actions={
@@ -70,7 +70,7 @@ export const Default: Story = {
             Change
           </SummaryList.Row.Action>
         }
-      />
+      /> */}
     </SummaryList>
   ),
 };
@@ -83,8 +83,8 @@ export const NoBorder: Story = {
     <SummaryList {...args}>
       <SummaryList.Row
         rowKey="Name"
-        value="John Smith"
-        actions={
+        rowValue="John Smith"
+        rowActions={
           <SummaryList.Row.Action visuallyHiddenText="name" href="#">
             Change
           </SummaryList.Row.Action>
@@ -92,8 +92,8 @@ export const NoBorder: Story = {
       />
       <SummaryList.Row
         rowKey="Date of birth"
-        value="1 January 1990"
-        actions={
+        rowValue="1 January 1990"
+        rowActions={
           <SummaryList.Row.Action visuallyHiddenText="date of birth" href="#">
             Change
           </SummaryList.Row.Action>
@@ -101,7 +101,7 @@ export const NoBorder: Story = {
       />
       <SummaryList.Row
         rowKey="Address"
-        value={
+        rowValue={
           <>
             1 Smith Street, Smithville, <br />
             Smithfield, <br />
@@ -109,7 +109,7 @@ export const NoBorder: Story = {
             SM1 1SM
           </>
         }
-        actions={
+        rowActions={
           <SummaryList.Row.Action visuallyHiddenText="address" href="#">
             Change
           </SummaryList.Row.Action>
@@ -117,13 +117,13 @@ export const NoBorder: Story = {
       />
       <SummaryList.Row
         rowKey="Contact details"
-        value={
+        rowValue={
           <>
             07000 000000 <br />
             john.smith@email.com
           </>
         }
-        actions={
+        rowActions={
           <SummaryList.Row.Action visuallyHiddenText="contact details" href="#">
             Change
           </SummaryList.Row.Action>
@@ -139,11 +139,11 @@ export const NoBorderNoActions: Story = {
   },
   render: (args) => (
     <SummaryList {...args}>
-      <SummaryList.Row rowKey="Name" value="John Smith" />
-      <SummaryList.Row rowKey="Date of birth" value="1 January 1990" />
+      <SummaryList.Row rowKey="Name" rowValue="John Smith" />
+      <SummaryList.Row rowKey="Date of birth" rowValue="1 January 1990" />
       <SummaryList.Row
         rowKey="Address"
-        value={
+        rowValue={
           <>
             1 Smith Street, Smithville, <br />
             Smithfield, <br />
@@ -154,7 +154,7 @@ export const NoBorderNoActions: Story = {
       />
       <SummaryList.Row
         rowKey="Contact details"
-        value={
+        rowValue={
           <>
             07000 000000 <br />
             john.smith@email.com

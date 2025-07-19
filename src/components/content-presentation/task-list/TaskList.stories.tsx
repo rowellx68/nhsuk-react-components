@@ -11,7 +11,6 @@ const meta: Meta<typeof TaskList> = {
   component: TaskList,
   subcomponents: {
     'TaskList.Item': TaskList.Item,
-    'TaskList.Item.NameAndHint': TaskList.Item.NameAndHint,
     'TaskList.Item.Status': TaskList.Item.Status,
   } as Record<string, React.ComponentType<any>>,
 };
@@ -23,125 +22,133 @@ type Story = StoryObj<typeof TaskList>;
 export const Default: Story = {
   render: (args) => (
     <TaskList {...args}>
-      <TaskList.Item modifier="with-link">
-        <TaskList.Item.NameAndHint href="#">Exercise</TaskList.Item.NameAndHint>
-        <TaskList.Item.Status modifier="completed">
-          Completed
-        </TaskList.Item.Status>
-      </TaskList.Item>
-      <TaskList.Item modifier="with-link">
-        <TaskList.Item.NameAndHint href="#">
-          Personal health
-        </TaskList.Item.NameAndHint>
-        <TaskList.Item.Status modifier="completed">
-          Completed
-        </TaskList.Item.Status>
-      </TaskList.Item>
-      <TaskList.Item modifier="with-link">
-        <TaskList.Item.NameAndHint
-          href="#"
-          hint="Details of your parents and siblings"
-        >
-          Family health history
-        </TaskList.Item.NameAndHint>
-        <TaskList.Item.Status modifier="incomplete">
-          Incomplete
-        </TaskList.Item.Status>
-      </TaskList.Item>
-      <TaskList.Item modifier="with-link">
-        <TaskList.Item.NameAndHint href="#">
-          Smoking history
-        </TaskList.Item.NameAndHint>
-        <TaskList.Item.Status modifier="incomplete">
-          Incomplete
-        </TaskList.Item.Status>
-      </TaskList.Item>
-      <TaskList.Item>
-        <TaskList.Item.NameAndHint href="#">
-          Blood test
-        </TaskList.Item.NameAndHint>
-        <TaskList.Item.Status modifier="cannot-start-yet">
-          Cannot start yet
-        </TaskList.Item.Status>
-      </TaskList.Item>
+      <TaskList.Item
+        as="a"
+        href="#"
+        title="Exercise"
+        status={
+          <TaskList.Item.Status modifier="completed">
+            Completed
+          </TaskList.Item.Status>
+        }
+      />
+      <TaskList.Item
+        as="a"
+        href="#"
+        title="Personal health"
+        status={
+          <TaskList.Item.Status modifier="completed">
+            Completed
+          </TaskList.Item.Status>
+        }
+      />
+      <TaskList.Item
+        as="a"
+        href="#"
+        title="Family health history"
+        hint="Details of your parents and siblings"
+        status={
+          <TaskList.Item.Status modifier="incomplete">
+            Incomplete
+          </TaskList.Item.Status>
+        }
+      />
+      <TaskList.Item
+        as="a"
+        href="#"
+        title="Smoking history"
+        status={
+          <TaskList.Item.Status modifier="incomplete">
+            Incomplete
+          </TaskList.Item.Status>
+        }
+      />
+      <TaskList.Item
+        title="Blood test"
+        status={
+          <TaskList.Item.Status modifier="cannot-start-yet">
+            Cannot start yet
+          </TaskList.Item.Status>
+        }
+      />
     </TaskList>
   ),
 };
 
-export const MultipleSections: Story = {
-  render: (args) => (
-    <div>
-      <Heading size="l">Service name</Heading>
-      <Heading size="m" as="h2">
-        Check before you start
-      </Heading>
-      <TaskList {...args}>
-        <TaskList.Item modifier="with-link">
-          <TaskList.Item.NameAndHint href="#">
-            Check eligibility
-          </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status modifier="completed">
-            Completed
-          </TaskList.Item.Status>
-        </TaskList.Item>
-        <TaskList.Item modifier="with-link">
-          <TaskList.Item.NameAndHint href="#">
-            Read declaration
-          </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status modifier="incomplete">
-            Incomplete
-          </TaskList.Item.Status>
-        </TaskList.Item>
-      </TaskList>
+// export const MultipleSections: Story = {
+//   render: (args) => (
+//     <div>
+//       <Heading size="l">Service name</Heading>
+//       <Heading size="m" as="h2">
+//         Check before you start
+//       </Heading>
+//       <TaskList {...args}>
+//         <TaskList.Item modifier="with-link">
+//           <TaskList.Item.NameAndHint href="#">
+//             Check eligibility
+//           </TaskList.Item.NameAndHint>
+//           <TaskList.Item.Status modifier="completed">
+//             Completed
+//           </TaskList.Item.Status>
+//         </TaskList.Item>
+//         <TaskList.Item modifier="with-link">
+//           <TaskList.Item.NameAndHint href="#">
+//             Read declaration
+//           </TaskList.Item.NameAndHint>
+//           <TaskList.Item.Status modifier="incomplete">
+//             Incomplete
+//           </TaskList.Item.Status>
+//         </TaskList.Item>
+//       </TaskList>
 
-      <Heading size="m" as="h2">
-        Prepare application
-      </Heading>
-      <TaskList {...args}>
-        <TaskList.Item modifier="with-link">
-          <TaskList.Item.NameAndHint href="#">
-            Exercise
-          </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status modifier="completed">
-            Completed
-          </TaskList.Item.Status>
-        </TaskList.Item>
-        <TaskList.Item modifier="with-link">
-          <TaskList.Item.NameAndHint href="#">
-            Personal health
-          </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status modifier="completed">
-            Completed
-          </TaskList.Item.Status>
-        </TaskList.Item>
-        <TaskList.Item modifier="with-link">
-          <TaskList.Item.NameAndHint
-            href="#"
-            hint="Details of your parents and siblings"
-          >
-            Family health history
-          </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status modifier="incomplete">
-            Incomplete
-          </TaskList.Item.Status>
-        </TaskList.Item>
-        <TaskList.Item modifier="with-link">
-          <TaskList.Item.NameAndHint href="#">
-            Smoking history
-          </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status modifier="incomplete">
-            Incomplete
-          </TaskList.Item.Status>
-        </TaskList.Item>
-        <TaskList.Item>
-          <TaskList.Item.NameAndHint href="#">
-            Blood test
-          </TaskList.Item.NameAndHint>
-          <TaskList.Item.Status modifier="cannot-start-yet">
-            Cannot start yet
-          </TaskList.Item.Status>
-        </TaskList.Item>
-      </TaskList>
-    </div>
-  ),
-};
+//       <Heading size="m" as="h2">
+//         Prepare application
+//       </Heading>
+//       <TaskList {...args}>
+//         <TaskList.Item modifier="with-link">
+//           <TaskList.Item.NameAndHint href="#">
+//             Exercise
+//           </TaskList.Item.NameAndHint>
+//           <TaskList.Item.Status modifier="completed">
+//             Completed
+//           </TaskList.Item.Status>
+//         </TaskList.Item>
+//         <TaskList.Item modifier="with-link">
+//           <TaskList.Item.NameAndHint href="#">
+//             Personal health
+//           </TaskList.Item.NameAndHint>
+//           <TaskList.Item.Status modifier="completed">
+//             Completed
+//           </TaskList.Item.Status>
+//         </TaskList.Item>
+//         <TaskList.Item modifier="with-link">
+//           <TaskList.Item.NameAndHint
+//             href="#"
+//             hint="Details of your parents and siblings"
+//           >
+//             Family health history
+//           </TaskList.Item.NameAndHint>
+//           <TaskList.Item.Status modifier="incomplete">
+//             Incomplete
+//           </TaskList.Item.Status>
+//         </TaskList.Item>
+//         <TaskList.Item modifier="with-link">
+//           <TaskList.Item.NameAndHint href="#">
+//             Smoking history
+//           </TaskList.Item.NameAndHint>
+//           <TaskList.Item.Status modifier="incomplete">
+//             Incomplete
+//           </TaskList.Item.Status>
+//         </TaskList.Item>
+//         <TaskList.Item>
+//           <TaskList.Item.NameAndHint href="#">
+//             Blood test
+//           </TaskList.Item.NameAndHint>
+//           <TaskList.Item.Status modifier="cannot-start-yet">
+//             Cannot start yet
+//           </TaskList.Item.Status>
+//         </TaskList.Item>
+//       </TaskList>
+//     </div>
+//   ),
+// };
